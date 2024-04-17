@@ -43,13 +43,16 @@ ALTER SEQUENCE book_seq maxvalue 14;
 
 -- [4] 시퀀스 삭제
 DROP SEQUENCE book_seq;
+DROP SEQUENCE member_seq;
+DROP SEQUENCE rent_seq;
 
 -- [5] 시퀀스 재생성 : 다음 숫자부터 시작하게 하여 기존 레코드와 중복되지 않게 합니다.
 CREATE SEQUENCE book_seq start with 15 increment by 1;
 
--- 1부터 1씩 늘어나는 member_seq 와 rent_seq 를 생성해주세요.
+-- 1부터 1씩 늘어나는 member_seq 와 num_seq 를 생성해주세요.
+CREATE SEQUENCE book_seq START WITH 1 increment BY 1;
 CREATE SEQUENCE member_seq start with 1 increment by 1;
-​CREATE SEQUENCE rent_seq start with 1 increment by 1;
+​CREATE sequence num_seq start with 1 increment by 1;
 
 select * from book_list;
 

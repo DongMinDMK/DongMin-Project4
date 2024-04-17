@@ -206,6 +206,10 @@ CREATE TABLE rent_list(
 
 );
 
+drop table rent_list;
+drop table book_list;
+drop table member_list;
+
 ​
 
 SELECT * FROM rent_list;

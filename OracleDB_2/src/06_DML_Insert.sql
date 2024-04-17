@@ -148,25 +148,25 @@ select * from RENT_LIST;
 
 ​
 
-insert into rent_list(num_seq, rentdate, b_num, m_num, discount) values(rent_seq.nextVal,'2021/10/01', 1, 1, 100);
+insert into rent_list(num_seq, rentdate, b_num, m_num, discount) values(num_seq.nextVal,'2021/10/01', 1, 1, 100);
 
-insert into rent_list(num_seq, rentdate, b_num, m_num, discount) values(rent_seq.nextVal,'2021/10/01', 2, 2, 100);
+insert into rent_list(num_seq, rentdate, b_num, m_num, discount) values(num_seq.nextVal,'2021/10/01', 2, 2, 100);
 
-insert into rent_list(num_seq, rentdate, b_num, m_num, discount) values(rent_seq.nextVal,'2021/10/02', 3, 3, 200);
+insert into rent_list(num_seq, rentdate, b_num, m_num, discount) values(num_seq.nextVal,'2021/10/02', 3, 3, 200);
 
-insert into rent_list(num_seq, rentdate, b_num, m_num, discount) values(rent_seq.nextVal,'2021/10/02', 4, 4, 100);
+insert into rent_list(num_seq, rentdate, b_num, m_num, discount) values(num_seq.nextVal,'2021/10/02', 4, 4, 100);
 
-insert into rent_list(num_seq, rentdate, b_num, m_num, discount) values(rent_seq.nextVal,'2021/10/03', 5, 5, 200);
+insert into rent_list(num_seq, rentdate, b_num, m_num, discount) values(num_seq.nextVal,'2021/10/03', 5, 5, 200);
 
-insert into rent_list(num_seq, rentdate, b_num, m_num, discount) values(rent_seq.nextVal,'2021/10/03', 6, 6, 300);
+insert into rent_list(num_seq, rentdate, b_num, m_num, discount) values(num_seq.nextVal,'2021/10/03', 6, 6, 300);
 
-insert into rent_list(num_seq, rentdate, b_num, m_num, discount) values(rent_seq.nextVal,'2021/10/04', 7, 7, 100);
+insert into rent_list(num_seq, rentdate, b_num, m_num, discount) values(num_seq.nextVal,'2021/10/04', 7, 7, 100);
 
-insert into rent_list(num_seq, rentdate, b_num, m_num, discount) values(rent_seq.nextVal,'2021/10/04', 8, 8, 300);
+insert into rent_list(num_seq, rentdate, b_num, m_num, discount) values(num_seq.nextVal,'2021/10/04', 8, 8, 300);
 
-insert into rent_list(num_seq, rentdate, b_num, m_num, discount) values(rent_seq.nextVal,'2021/10/05', 9, 9, 100);
+insert into rent_list(num_seq, rentdate, b_num, m_num, discount) values(num_seq.nextVal,'2021/10/05', 9, 9, 100);
 
-insert into rent_list(num_seq, rentdate, b_num, m_num, discount) values(rent_seq.nextVal,'2021/10/05', 10, 10, 200);
+insert into rent_list(num_seq, rentdate, b_num, m_num, discount) values(num_seq.nextVal,'2021/10/05', 10, 10, 200);
 
 ​
 
