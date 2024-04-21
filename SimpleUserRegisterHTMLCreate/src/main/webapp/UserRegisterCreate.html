@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UserRigisterCreate.html</title>
+</head>
+<body>
+<table border="1" bgcolor = "blue" align = "center">
+	<tr bgcolor = "white" height = 30>
+		<td width = 90 align = "center"> 아이디</td>
+		<td width = 400><input type = "text" name = "userid"></td>
+	</tr>
+	<tr bgcolor = "white" height = 30>
+		<td width = 90 align="center">Password</td>
+		<td width = 400><input type = "password" name = "pw"></td>
+	</tr>
+	<tr bgcolor = "white" height = 30>
+		<td width = 90 align = "center"> 전화번호 </td>
+		<td width = 400>
+			<select name = "phone">
+			<option selected>010</option>
+			<option>011</option>
+			<option>012</option>
+			<option>013</option>
+			<option>019</option>
+			<option>02</option>
+			</select>
+			-
+			<input type = "text" size = "10">
+			-
+			<input type = "password" size = "10">
+		</td>
+	</tr>
+	<tr bgcolor = "white" height = 30>
+		<td width = 90 align="center"> 성별 </td>
+		<td width = 400>
+			<input type = "radio" name = "gender"> 남자
+			<input type = "radio" name = "gender"> 여자
+		</td>
+	</tr>
+	<tr bgcolor = "white" height = 30>
+		<td width = 90 align="center"> 알게된 경로</td>
+		<td width = 400>
+			<input type="checkbox" name = "root" value = "1"> 신문
+			<input type="checkbox" name = "root" value = "2"> TV
+			<input type="checkbox" name = "root" value = "3"> 지인소개
+			<input type="checkbox" name = "root" value = "4"> 기타
+		</td>
+	</tr>
+	<tr bgcolor = "white" height = 30>
+		<td width = 90 align="center"> 직업 </td>
+		<td width = 400>
+			<select name = "job">
+			<option selected> 학생 </option>
+			<option> 취준생</option>
+			<option> 소방관</option>
+			<option> 경찰관</option>
+			<option> 운동선수</option>
+			</select>
+		</td>
+	</tr>
+	<tr bgcolor = "white" height = 30>
+		<td width = 90 align="center"> 생년월일</td>
+		<td width = 400>
+			<input type = "text" name = "year" size = 10>
+			년
+			<select name = "month">
+				<option value = "1" selected>1</option>
+				<option value = "2">2</option>
+				<option value = "3">3</option>
+				<option value = "4">4</option>
+				<option value = "5">5</option>
+				<option value = "6">6</option>
+				<option value = "7">7</option>
+				<option value = "8">8</option>
+				<option value = "9">9</option>
+				<option value = "10">10</option>
+				<option value = "11">11</option>
+				<option value = "12">12</option>
+			</select>
+			월
+			<select name = "day">
+				<option value = "1" selected>1</option>
+				<option value = "2" > 2 </option>
+				<option value = "3" > 3 </option>
+				<option value = "4" > 4 </option>
+				<option value = "5" > 5 </option>
+				<option value = "6" > 6 </option>
+				<option value = "7" > 7 </option>
+				<option value = "8" > 8 </option>
+				<option value = "9" > 9 </option>
+				<option value = "10" > 10 </option>
+				<option value = "11" > 11 </option>
+				<option value = "12" > 12 </option>
+				<option value = "13" > 13 </option>
+				<option value = "14" > 14 </option>
+				<option value = "15" > 15 </option>
+				<option value = "16" > 16 </option>
+				<option value = "17" > 17 </option>
+				<option value = "18" > 18 </option>
+				<option value = "19" > 19 </option>
+				<option value = "20" > 20 </option>
+				<option value = "21" > 21 </option>
+				<option value = "22" > 22 </option>
+				<option value = "23" > 23 </option>
+				<option value = "24" > 24 </option>
+				<option value = "25" > 25 </option>
+				<option value = "26" > 26 </option>
+				<option value = "27" > 27 </option>
+				<option value = "28" > 28 </option>
+				<option value = "29" > 29 </option>
+				<option value = "30" > 30 </option>
+				<option value = "31" > 31 </option>
+			</select>
+			일
+		</td>
+	</tr>
+	<tr bgcolor = "white" height = 30>
+		<td width = 90 align="center">주소</td>
+		<td width = 400><input type = "text" name = "address" size = "50"></td>
+	</tr>
+	<tr bgcolor = "white">
+		<th align="center">인사말</th>
+			<td>
+				<textarea cols="70" rows="10" name = "hi">안녕하세요... 인사말입니다..</textarea>
+			</td>
+	</tr>
+	<tr bgcolor = "white" height = 30>
+		<td width = 90 colspan="2" align="center">
+			<input type = "submit" name = "welcome" value = "회원가입">
+			<input type = "reset" name = "resetButton" value = "다시작성">
+		</td>
+	</tr>
+</table>
+</body>
+</html>
