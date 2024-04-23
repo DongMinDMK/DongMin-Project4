@@ -138,6 +138,68 @@ public class RentDAO {
 	
 		return result;
 	}
+
+	public RentDTO rentGetRent(int rent_num) {
+		RentDTO rentDTO = new RentDTO();
+		
+		con = DBman.getConnection();
+		
+		String sql = "select * from rentDetail where rent_num = ?";
+		
+		try {
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setInt(1, rent_num);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				rentDTO.setRent_num(rs.getInt("rent_num"));
+				rentDTO.setRent_date(rs.getString("rent_date"));
+				rentDTO.setB_num(rs.getInt("b_num"));
+				rentDTO.setSubject(rs.getString("subject"));
+				rentDTO.setM_num(rs.getInt("m_num"));
+				rentDTO.setName(rs.getString("name"));
+				rentDTO.setDiscount(rs.getInt("discount"));
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		DBman.close(con, pstmt, rs);
+		
+		return rentDTO;
+	}
+
+	public int rentUpdate(RentDTO rentDTO) {
+		int result = 0;
+		
+		con = DBman.getConnection();
+		
+		String sql = "update rent_list set rent_date = str_to_date(concat('',?,''), '%Y-%m-%d'), b_num = ?, m_num = ?, discount = ? where rent_num = ?";
+		
+		try {
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setString(1, rentDTO.getRent_date());
+			pstmt.setInt(2, rentDTO.getB_num());
+			pstmt.setInt(3, rentDTO.getM_num());
+			pstmt.setInt(4, rentDTO.getDiscount());
+			pstmt.setInt(5, rentDTO.getRent_num());
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		
+		DBman.close(con, pstmt, rs);
+		
+		
+		return result;
+	}
 	
 	
 	
