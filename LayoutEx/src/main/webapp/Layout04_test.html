@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout04.html</title>
+    <style>
+
+        body{
+
+            margin: 0;
+
+        }
+
+        .base1{
+
+            border: solid 1px black;
+
+            width: 100%;
+
+            height: 200px;
+
+        }
+
+        #divHeader{
+
+            border: solid 1px red;
+
+            margin: 0 auto;
+
+            margin-left: 380px;
+
+            width: 30%;
+
+            height: 200px;
+
+        }
+
+        #divHeaderTitle{
+
+            text-align: center;
+
+            font-weight: bold;
+
+            font-size: 23px;
+
+            height: 50px;
+
+            border: solid 1px red;
+
+            line-height: 50px;
+
+        }
+
+        #divHeaderNav{
+
+            font-size : 12px;
+
+        }
+
+        .base2{
+
+            border: solid 1px black;
+
+            width: 100%;
+
+            height: 200px;
+
+        }
+
+        #base2Section{
+
+            position: relative;
+
+            border: 1px solid red;
+
+            width : 68%;
+
+            height : 200px;
+
+            left: 120px;
+
+        }
+
+        #base2SectionImage1{
+
+            position: absolute;
+
+            left: 0;
+
+            top: 0;
+
+            background-image:url(images/1.png);
+
+            width : 200px;
+
+            height: 200px;
+
+            border-radius: 100px 100px 100px 100px;
+
+        }
+
+        #base2SectionImage2{
+
+            position: absolute;
+
+            left: 0;
+
+            top: 0;
+
+            background-image:url(images/Koala.jpg);
+
+            background-size: 100%;
+
+            width : 200px;
+
+            height: 200px;
+
+            border-radius: 100px 100px 100px 100px;
+
+            margin-left: 223px;
+
+        }
+
+        #base2SectionImage3{
+
+            position: absolute;
+
+            left: 0;
+
+            top: 0;
+
+            background-image:url(images/3.png);
+
+            width : 200px;
+
+            height: 200px;
+
+            border-radius: 100px 100px 100px 100px;
+
+            margin-left: 440px;
+
+        }
+
+        #base2SectionImage4{
+
+            position: absolute;
+
+            left: 0;
+
+            top: 0;
+
+            background-image:url(images/4.png);
+
+            width : 200px;
+
+            height: 200px;
+
+            border-radius: 100px 100px 100px 100px;
+
+            margin-left: 670px;
+
+        }
+
+        .base3{
+
+            border: solid 1px black;
+
+            width: 100%;
+
+            height: 170px;
+
+        }
+
+        #base3Footer{
+
+            position: relative;
+
+            border: 1px solid red;
+
+            width : 68%;
+
+            height : 170px;
+
+            left: 120px;
+
+        }
+
+        #base3FooterTitle1{
+
+            position: absolute;
+
+            border: 1px solid blue;
+
+            width : 200px;
+
+            height: 70px;
+
+            color : white;
+
+            background: blue;
+
+            text-align: center;
+
+            line-height: 50px;
+
+            font-weight: bold;
+
+        }
+
+        #base3FooterTitle1Content1{
+
+            position: absolute;
+
+            border: 1px solid blue;
+
+            width : 200px;
+
+            height: 118px;
+
+            color : blue;
+
+            font-size: 10px;
+
+            top : 50px;
+
+            background: white;
+
+        }
+
+        #base3FooterTitle2{
+
+            position: absolute;
+
+            border: 1px solid blue;
+
+            width : 200px;
+
+            height: 50px;
+
+            color : white;
+
+            background: blue;
+
+            text-align: center;
+
+            line-height: 50px;
+
+            margin-left: 220px;
+
+            font-weight: bold;
+
+        }
+
+        #base3FooterTitle1Content2{
+
+            position: absolute;
+
+            border: 1px solid blue;
+
+            width : 200px;
+
+            height: 118px;
+
+            color : blue;
+
+            font-size: 10px;
+
+            top : 50px;
+
+            background: white;
+
+            left : 220px;
+
+        }
+
+        #base3FooterTitle3{
+
+            position: absolute;
+
+            border: 1px solid blue;
+
+            width : 200px;
+
+            height: 50px;
+
+            color : white;
+
+            background: blue;
+
+            text-align: center;
+
+            line-height: 50px;
+
+            margin-left: 440px;
+
+            font-weight: bold;
+
+        }
+
+        #base3FooterTitle1Content3{
+
+            position: absolute;
+
+            border: 1px solid blue;
+
+            width : 200px;
+
+            height: 118px;
+
+            color : blue;
+
+            font-size: 10px;
+
+            top : 50px;
+
+            background: white;
+
+            left : 440px;
+
+        }
+
+        #base3FooterTitle4{
+
+            position: absolute;
+
+            border: 1px solid blue;
+
+            width : 200px;
+
+            height: 50px;
+
+            color : white;
+
+            background: blue;
+
+            text-align: center;
+
+            line-height: 50px;
+
+            margin-left: 670px;
+
+            font-weight: bold;
+
+        }
+
+        #base3FooterTitle1Content4{
+
+            position: absolute;
+
+            border: 1px solid blue;
+
+            width : 200px;
+
+            height: 118px;
+
+            color : blue;
+
+            font-size: 10px;
+
+            top : 50px;
+
+            background: white;
+
+            left : 670px;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div class = "base1">
+        <div id = "divHeader">
+            <div id = "divHeaderTitle">Content Title01</div>
+            <div id = "divHeaderNav">
+                저작자·발명가·과학기술자와 예술가의 권리는 법률로써 보호한다. 행정권은 대통령을 수반으로 하는 정부에 속한다. 모든 국민은 보건에 관하여 국가의 보호를 받는다. 헌법재판소 재판관은 탄핵 또는 금고 이상의 형의 선고에 의하지 아니하고는 파면되지 아니한다. 국가안전보장회의의 조직·직무범위 기타 필요한 사항은 법률로 정한다.
+            </div>
+        </div> 
+    </div>
+
+    <div class = "base2">
+        <div id = "base2Section">
+            <div id = "base2SectionImage1"></div>
+            <div id = "base2SectionImage2"></div>
+            <div id = "base2SectionImage3"></div>
+            <div id = "base2SectionImage4"></div>
+        </div>
+    </div>
+
+    <div class = "base3">
+
+        <div id = "base3Footer">
+            <div id = "base3FooterTitle1">Segment</div>
+            <div id = "base3FooterTitle1Content1">
+                나는 헌법을 준수하고 국가를 보위하며 조국의 평화적 통일과 국민의 자유와 복리의 증진 및 민족문화의 창달에 노력하여 대통령으로서의 직책을 성실히 수행할 것을 국민 앞에 엄숙히 선서합니다. 한 회계연도를 넘어 계속하여 지출할 필요가 있을 때에는 정부는 연한을 정하여 계속비로서 국회의 의결을 얻어야 한다.
+            </div>
+
+            <div id = "base3FooterTitle2">Segment</div>
+            <div id = "base3FooterTitle1Content2">
+                나는 헌법을 준수하고 국가를 보위하며 조국의 평화적 통일과 국민의 자유와 복리의 증진 및 민족문화의 창달에 노력하여 대통령으로서의 직책을 성실히 수행할 것을 국민 앞에 엄숙히 선서합니다. 한 회계연도를 넘어 계속하여 지출할 필요가 있을 때에는 정부는 연한을 정하여 계속비로서 국회의 의결을 얻어야 한다.
+            </div>
+
+            <div id = "base3FooterTitle3">Segment</div>
+            <div id = "base3FooterTitle1Content3">
+                나는 헌법을 준수하고 국가를 보위하며 조국의 평화적 통일과 국민의 자유와 복리의 증진 및 민족문화의 창달에 노력하여 대통령으로서의 직책을 성실히 수행할 것을 국민 앞에 엄숙히 선서합니다. 한 회계연도를 넘어 계속하여 지출할 필요가 있을 때에는 정부는 연한을 정하여 계속비로서 국회의 의결을 얻어야 한다.
+            </div>
+
+            <div id = "base3FooterTitle4">Segment</div>
+            <div id = "base3FooterTitle1Content4">
+                나는 헌법을 준수하고 국가를 보위하며 조국의 평화적 통일과 국민의 자유와 복리의 증진 및 민족문화의 창달에 노력하여 대통령으로서의 직책을 성실히 수행할 것을 국민 앞에 엄숙히 선서합니다. 한 회계연도를 넘어 계속하여 지출할 필요가 있을 때에는 정부는 연한을 정하여 계속비로서 국회의 의결을 얻어야 한다.
+            </div>
+        </div>
+    </div>
+</body>
+</html>
