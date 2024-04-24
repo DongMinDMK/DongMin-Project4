@@ -1,0 +1,78 @@
+body{
+    margin: 0;
+}
+.base1{
+    border: 1px solid black;
+    width: 100vw;
+    height: 200px;
+}
+
+.base1 .container1{
+   border: 1px solid red;
+   width : 30vw;
+   height: 200px;
+   display: flex;
+   flex-direction: column;
+   margin: 0 auto;
+}
+.base1 .container1 .title{
+   padding-top: 10px;
+   height: 60px;
+   font-weight: bold;
+   font-size: 25px;
+   justify-content: center;
+   align-items: center;
+   display: flex;
+}
+.container1 .content{
+    height: 140px;
+    border-top: 1px solid red;
+}
+
+.base2{
+    border: 1px solid black;
+    width: 100vw;
+    height: 200px;
+}
+
+.container2{
+    border: 1px solid red;
+    display: flex;
+    width : 80vw;
+    height: 200px;
+    margin: 0 auto;
+    justify-content: space-around;
+}
+
+.base2 .container2 img{
+    width : 200px;
+    height: 200px;
+    border-radius: 50%;
+    flex-wrap: wrap;
+}
+
+.base3{
+    border: 1px solid black;
+    width: 100vw;
+    height: 200px;
+}
+
+.base3 .container2 .box{
+    border: 1px solid blue;
+    justify-content: space-between;
+}
+
+.base3 .container2 .boxTitle{
+    background: blue;
+    color : white;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 60px;
+    font-size: 25px;
+}
+
+.base3 .container2 .boxContent{
+    font-size: 15px;
+}
