@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		var today = new Date();
+    	var year = today.getFullYear(); // 현재 날짜 기준 연도 2024
+    	var month = today.getMonth()+1; // 현재 날짜 기준 월 4ㄴ
+   		var date = today.getDate(); //현재 날짜 기준 일 28
+
+    	var y = Number(window.prompt("년(연)도를 입력하세요", year)); // 문자 year를 숫자 자료형으로 형변환 후 숫자 변수 y에 대입
+    	var m = Number(window.prompt("월을 입력하세요", month)); // 문자 month를 숫자 자료형으로 형변환 후 숫자 변수 m에 대입
+
+    	// 1년부터 입력한 연도의 전날까지 전체일수 출력
+    	var days = 365 * (y-1);
+
+    	for(var i=1; i<y; i++){
+        	if((i%4==0) && (i%100!=0) || (i%400==0)){ // 만약 연월(4년마다 한번씩 그리고 400년마다 1번씩 2월이 28일이 아닌 29일)이라면?
+           	 days++;
+        	}
+    	}
+
+    	// 일단 여기까지 연월을 포함한 작년(2023년도 까지 총 전체일수를 구함.)
+    	// 이 밑의 코드부터는 이번연도(2024)를 계산
+
+    	var mdays = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]; // mdays의 배열을 생성 후 초기화 
+
+    	if((y%4==0) && (y%100!=0) || (y%400==0)){ // 연월이면 배열의 2번째 인덱스 즉, 2월의 28을 29로 바꿈 설정
+        	mdays[2] = 29;
+    	}
+
+    	for(var i=1; i<=m-1; i++){ // 입력한 월 m의 전 달 까지 반복
+        	days += mdays[i]; //총 전체일수에 누적산
+    	}
+
+    	days += 1; //4월1일(여기까지 현재 월의 1일까지 총전체일수가 days 변수에 저장)
+
+    	//총 날짜수를 7로 나눈 나머지를 계산
+    	var weekday = days % 7; // 만약 나눈 나머지 즉 weekday가 1이면 월, 2이면 화.... 이런순으로 6 토욜까지 설정
+
+   	 	document.write("<table width = 700 border = 1px>");
+    
+    	document.write("<tr height = 80 align = 'center'><td>일</td><td>월</td><td>화</td><td>수</td><td>목</td><td>금</td><td>토</td></tr>");
+
+    	var cnt = 0;
+
+    	document.write("<tr height = 80 align = 'right'>");
+
+    	for(var cnt = 0; cnt<weekday; cnt++){
+        	document.write("<td>&nbsp;</td>");
+    	}
+
+    	for(var i=1; i<=mdays[m]; i++){
+        	document.write("<td>" + i + "</td>");
+        	cnt++;
+
+        	if(cnt % 7 == 0){
+            	document.write("</tr>");
+            	document.write("<tr height = 80 align = 'right'>");
+        	}
+    	}
+
+    	for(var k=i; k%7!=0; k++){
+        	document.write("<td>&nbsp;</td>");
+    	}
+
+    	document.write("</tr>");
+
+    	document.write("</table>");
+	</script>
+</body>
+</html>
