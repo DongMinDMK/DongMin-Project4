@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UserRegisterForm.html</title>
+    <script>
+        function joinCheck(){
+            // if(document.getElementById("userId").value == ""){
+
+            // }
+
+            if(document.form.userId.value == ""){ // name 을 이용해 접근
+                window.alert("아이디는 필수입력사항입니다. 아이디를 입력하세요...");
+                document.form.userId.focus(); // 해당 입력란에 커서를 옮깁니다.
+                return false; // 밑은 더 볼 필요도 없기 때문에 되돌림.(false) -> false를 적어야 폼을 종료..
+            } else if(document.form.pwd.value == ""){ // name 을 이용해 접근
+                window.alert("비밀번호는 필수입력사항입니다. 비밀번호를 입력하세요...");
+                document.form.pwd.focus(); // 해당 입력란에 커서를 옮깁니다.
+                return false; // 밑은 더 볼 필요도 없기 때문에 되돌림.(false) -> false를 적어야 폼을 종료..
+            }else if(document.form.pwd.value != document.form.pwdCheck.value){ // name 을 이용해 접근
+                window.alert("비밀번호와 비밀번호 확인이 일치하지 않습니다.");
+                document.form.pwd.focus(); // 해당 입력란에 커서를 옮깁니다.
+                return false; // 밑은 더 볼 필요도 없기 때문에 되돌림.(false) -> false를 적어야 폼을 종료..
+            }else if(document.form.userName.value == ""){ // name 을 이용해 접근
+                window.alert("이름은 필수입력사항입니다. 이름을 입력하세요...");
+                document.form.userName.focus(); // 해당 입력란에 커서를 옮깁니다.
+                return false; // 밑은 더 볼 필요도 없기 때문에 되돌림.(false) -> false를 적어야 폼을 종료..
+            }else if(document.form.email.value == ""){ // name 을 이용해 접근
+                window.alert("이메일은 필수입력사항입니다. 이메일을 입력하세요...");
+                document.form.email.focus(); // 해당 입력란에 커서를 옮깁니다.
+                return false; // 밑은 더 볼 필요도 없기 때문에 되돌림.(false) -> false를 적어야 폼을 종료..
+            }else if(document.form.phone.value == ""){// name 을 이용해 접근
+                window.alert("핸드폰번호를 입력하셔야 합니다. 번호를 입력해주세요...");
+                document.form.phone.focus();
+                return false;
+                
+            }else {
+                return true;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id = "wrap" align="center">
+        <h1>사용자 등록</h1>
+        <form name = "form" method = "post" action="testResult.html">
+            <table>
+                <tr>
+                    <th>USER ID</th>
+                    <td>
+                        <input type = "text" name="userId" id = "userId">
+                    </td>
+                </tr>
+                <tr>
+                    <th>PASSWORD</th>
+                    <td>
+                        <input type = "password" name="pwd" id = "pwd">
+                    </td>
+                </tr>
+                <tr>
+                    <th>RETYPE PW</th>
+                    <td>
+                        <input type = "password" name="pwdCheck" id = "pwdCheck">
+                    </td>
+                </tr>
+                <tr>
+                    <th>USER NAME</th>
+                    <td>
+                        <input type = "text" name="userName" id = "userName">
+                    </td>
+                </tr>
+                <tr>
+                    <th>EMAIL</th>
+                    <td>
+                        <input type = "text" name="email" id = "email">
+                    </td>
+                </tr>
+                <tr>
+                    <th>PHONE</th>
+                    <td>
+                        <input type = "text" name="phone" id = "phone">
+                    </td>
+                </tr>
+            </table>
+            <input type = "submit" value = "등록" onclick="return joinCheck()"> <!-- 여기서도 return 으로 해야 form으로 전달 -->
+            <input type = "reset" value = "다시입력">
+            <!-- 
+                submit 을 클릭하면 form 내부의 입력란들이 form 의 action 태그의 쪽으로 전송된다.
+                이 때 전송 내용을 외부로 노출하지 않으려면 method 에 post 를 입력합니다. 외부의 노출할려면 method에 get를 입력합니다. 
+                method 의 기본 디폴트는 get 입니다.
+             -->
+        </form>
+    </div>
+</body>
+</html>
