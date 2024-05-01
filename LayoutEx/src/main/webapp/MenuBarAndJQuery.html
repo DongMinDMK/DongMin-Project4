@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12_JQueryEx.html</title>
+    <script src = "script/jquery-3.7.1.min.js"></script>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+        }
+        #tabs{
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            cursor: pointer;
+        }
+
+        #tabs div{
+            position: relative;
+            width : 200px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        .tabs1{
+            border-radius: 5px 5px 5px 5px;
+        }
+        #content{
+            position: absolute;
+            top : 35px;
+            width : 1200px;
+            height: 1100px;
+        }
+
+        .contents{
+            position: absolute;
+            width: 1200px;
+            height: 500px;
+            text-align: center;
+            line-height: 500px;
+        }
+
+        #content1{
+            background: #ebaa55;
+            display: none;
+        }
+        #content2{
+            background: #55ebd1;
+            display: none;
+        }
+        #content3{
+            background: #4fbde3;
+            display: none;
+        }
+        #content4{
+            background : #6ebe6d;
+            display: none;
+        }
+
+        #content5{
+            background: #95a096;
+            display: none;
+        }
+
+        #content6{
+            background: #ed8d2a;
+            display: none;
+        }
+
+    </style>
+    <script>
+        $(function(){
+            $("#tabs div:eq(0)").css("background", "#ebaa55");
+            $("#tabs div:eq(1)").css("background", "#55ebd1");
+            $("#tabs div:eq(2)").css("background", "#4fbde3");
+            $("#tabs div:eq(3)").css("background", "#6ebe6d");
+            $("#tabs div:eq(4)").css("background", "#95a096");
+            $("#tabs div:eq(5)").css("background", "#ed8d2a");
+
+            // content 틀에 배경색을 탭메뉴와 맞춰주세요.
+            // 메뉴를 클릭하면 해당 화면이 화면에 보이게 코딩합니다.
+
+        });
+
+
+        $(function(){
+            $("#tabs div:eq(0)").on("click", function(){
+                $("#content1").fadeToggle();
+            });
+            $("#tabs div:eq(1)").on("click", function(){
+                $("#content2").fadeToggle();
+            });
+            $("#tabs div:eq(2)").on("click", function(){
+                $("#content3").fadeToggle();
+            });
+            $("#tabs div:eq(3)").on("click", function(){
+                $("#content4").fadeToggle();
+            });
+            $("#tabs div:eq(4)").on("click", function(){
+                $("#content5").fadeToggle();
+            });
+            $("#tabs div:eq(5)").on("click", function(){
+                $("#content6").fadeToggle();
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id = "tabs">
+        <div class = "tabs1">Menu A</div>
+        <div class = "tabs1">Menu B</div>
+        <div class = "tabs1">Menu C</div>
+        <div class = "tabs1">Menu D</div>
+        <div class = "tabs1">Menu E</div>
+        <div class = "tabs1">Menu F</div>
+    </div>
+    <div id = "content">
+        <div class = "contents" id = "content1">Content A </div>
+        <div class = "contents" id = "content2">Content B </div>
+        <div class = "contents" id = "content3">Content C </div>
+        <div class = "contents" id = "content4">Content D </div>
+        <div class = "contents" id = "content5">Content E </div>
+        <div class = "contents" id = "content6">Content F </div>
+    </div>
+</body>
+</html>
