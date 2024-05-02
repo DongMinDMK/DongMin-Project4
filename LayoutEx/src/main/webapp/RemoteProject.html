@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src = "script/jquery-3.7.1.min.js"></script>
+    <style>
+        #view{
+            position: relative;
+            width: 600px;
+            height: 400px;
+            border: 2px solid blue;
+            overflow: hidden;
+        }
+        #imgs{
+            position: absolute;
+            width: 4800px;
+            height: 400px;
+            border: 2px dashed red;
+        }
+
+        img{
+            width: 600px;
+            height: 400px;
+        }
+        #remote{
+            position: relative;
+            width: 330px;
+            height: 50px;
+            border: 1px solid white;
+            top:350px;
+            margin: 0 auto;
+        }
+
+        #remote div{
+            position: relative;
+            width : 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            margin: 3px;
+            float: left;
+            text-align: center;
+            line-height: 20px;
+            margin: 15px 5px;
+            cursor: pointer;
+        }
+
+        #remote .selected{
+            background: black;
+            color: white;
+        }
+    </style>
+    <script>
+        $(function(){
+            var timer;
+            var state = false;
+            var imgNum = 0;
+            var dis;
+            $("#remote div").on("click", function(){
+                var index = $(this).index();
+
+                if(index == 0){ // 하나씩 왼쪽으로 클릭하면 이동
+                    if(imgNum == 0) return;
+                    imgNum--;
+
+                    dis = -600 * imgNum;
+                    $("#imgs").animate({left:dis}, 500);
+
+                    $("#remote div").removeClass("selected");
+                    $("#remote div").eq(imgNum+1).addClass("selected"); 
+                    // 이렇게 한 이유는 index는 1번이 이미지번호 0번 코알라와
+                    // 매칭이 되기 때문에 index를 1번을 클릭하면 이미지번호(imgNum) 은 0번이랑 매칭시켜주기 위해 1을 더했다.
+                    // 버튼을 클릭하여 해당 버튼에 클래스를 제이쿼리에서 추가. 
+
+
+                }else if(index == 9){ // 하나씩 오른쪽으로 클릭하면 이동
+                    if(imgNum == 7) return;
+                    imgNum++;
+
+                    dis = -600 * imgNum;
+                    $("#imgs").animate({left:dis}, 500);
+
+                    $("#remote div").removeClass("selected");
+                    $("#remote div").eq(imgNum+1).addClass("selected");
+
+                }else if(index == 10){ // 동시 이동
+                    if(state == false){
+                        state = true;
+                        $("#remote div:eq(" + index + ")").html("■"); // == $("#remote div:eq(10)").html("■");
+
+                        timer = window.setInterval(function(){
+                            imgNum++;
+
+                            if(imgNum > 7) imgNum = 0;
+
+                            dis = -600 * imgNum;
+
+                            $("#imgs").animate({left:dis}, 500);
+
+                            $("#remote div").removeClass("selected");
+                            $("#remote div").eq(imgNum+1).addClass("selected");
+
+                        }, 1000);
+                    }else{
+                        state = false;
+                        $("#remote div:eq(" + index + ")").html("▶");
+                        window.clearInterval(timer);
+                    }
+
+                }else {
+                    imgNum = index - 1;
+
+                    dis = -600 * imgNum;
+
+                    $("#imgs").animate({left:dis}, 500);
+
+                    $("#remote div").removeClass("selected");
+                    $("#remote div").eq(imgNum+1).addClass("selected");
+                }
+            })
+        });
+    </script>
+</head>
+<body>
+    <div id = "view">
+        <div id = "imgs">
+            <img src = "images/Koala.jpg"><img src = "images/dog.jpg"><img src = "images/Desert.jpg"><img src = "images/Hydrangeas.jpg"><img src = "images/Jellyfish.jpg"><img src = "images/Lighthouse.jpg"><img src = "images/Penguins.jpg"><img src = "images/Tulips.jpg">
+        </div>
+        <div id = "remote">
+            <div>◁</div>
+            <div class = "selected">1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>▷</div>
+            <div>▶</div>
+        </div>
+    </div>
+</body>
+</html>
