@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src = "script/jquery-3.7.1.min.js"></script>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+        }
+
+        .container{
+            position: relative;
+            width : 600px;
+            height: 400px;
+            border: 1px solid red;
+            overflow: hidden;
+        }
+
+        #imgs{
+            position: absolute;
+            width : 3600px;
+            height: 400px;
+        }
+
+        img{
+            width : 600px;
+            height: 400px;
+        }
+
+        #remote{
+            border : 1px dotted white;
+            width : 250px;
+            height: 50px;
+            position: relative;
+            top : 350px;
+            left : 350px;
+            z-index: 2;
+        }
+
+        #remote div{
+            position: relative;
+            background: white;
+            border-radius: 50%;
+            width : 20px;
+            height: 20px;
+            float: left;
+            margin: 9px;
+            top : 10px;
+            left : 5px;
+        }
+
+        .captionBox{
+            position: absolute;
+            width : 600px;
+            height: 50px;
+            background-color: black;
+            top : 350px;
+            z-index: 1;
+        }
+
+        h3{
+            position: absolute;
+            color : white;
+            font-size: 100%;
+            bottom: 10px;
+        }
+        p{
+            position: absolute;
+            color: white;
+            top: 10px;
+        }
+
+        #remote .selected{
+            width : 30px;
+            height: 20px;
+            border-radius: 5px 5px 5px 5px;
+        }
+
+        .num{
+            position: absolute;
+            color : white;
+            left : 550px;
+            bottom: 380px;
+
+        }
+    </style>
+    <script>
+        $(function(){
+            var imgNum = 0;
+            var dis;
+
+            window.setInterval(function(){
+                imgNum++;
+                if(imgNum > 5) imgNum = 0;
+                dis = -600 * imgNum;
+
+                $("#imgs").animate({left : dis}, 1000); // 이미지 넘기기
+
+                $("#remote div").removeClass("selected");
+                $("#remote div:eq(" + imgNum + ")").addClass("selected"); // 리모트를 이미지가 넘길 때마다 리모트 스타일 변경하기
+
+                if(imgNum == 0) $("#cap5").animate({top : 400}, 1000); 
+                $("#cap" + imgNum).animate({top:350}, 1000);
+                $("#cap" + (imgNum-1)).animate({top : 400}, 1000); // 이미지가 넘어갈때마다 해당하는 이미지의 캡션바 올리기
+
+                $(".num").html((imgNum+1) + "/6"); // 이미지가 넘어갈때마다 각각의 현재 이미지가 몇번중에 몇번인지 표시하기
+            }, 3000);
+        });
+    </script>
+</head>
+<body>
+    <div class = container>
+        <div id = "imgs">
+            <img src = "images/Koala.jpg"><img src = "images/Lighthouse.jpg"><img src = "images/Desert.jpg"><img src = "images/Hydrangeas.jpg"><img src = "images/Jellyfish.jpg"><img src = "images/Penguins.jpg">
+        </div>
+        <div id = "remote">
+            <div class = "selected"></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class = "captionBox" id = "cap0">
+            <h3>First Image</h3>
+            <p>Lorem ipsum dolor sit amet consectetur.  
+            </p>
+        </div>
+        <div class = "captionBox" id = "cap1">
+            <h3>Second Image</h3>
+            <p>Lorem ipsum dolor sit amet consectetur. 
+            </p>
+        </div>
+        <div class = "captionBox" id = "cap2">
+            <h3>Third Image</h3>
+            <p>Lorem ipsum dolor sit amet consectetur.
+            </p>
+        </div>
+        <div class = "captionBox" id = "cap3">
+            <h3>Forth Image</h3>
+            <p>Lorem ipsum dolor sit amet consectetur.
+            </p>
+        </div>
+        <div class = "captionBox" id = "cap4">
+            <h3>Fifth Image</h3>
+            <p>Lorem ipsum dolor sit amet consectetur.
+            </p>
+        </div>
+        <div class = "captionBox" id = "cap5">
+            <h3>Sixth Image</h3>
+            <p>Lorem ipsum dolor sit amet consectetur. 
+            </p>
+        </div>
+
+        <div class = "num">
+            1/6
+        </div>
+    </div>
+</body>
+</html>
