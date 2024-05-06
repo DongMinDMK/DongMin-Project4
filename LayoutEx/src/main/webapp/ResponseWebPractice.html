@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .container{
+            display: flex;
+            background-color: yellow;
+            width : 100%;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .container #headerBox{
+            width : 70%;
+            height: 100%;
+            border : 1px solid black;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            box-sizing: border-box;
+        }
+
+        .container #title{
+            font-size: 200%;
+            font-weight: bold;
+            text-align: center;
+            padding: 30px;
+            box-sizing: border-box;
+            width: 100%;
+            line-height: 100px;
+            border-bottom: 1px solid black;
+        }
+
+        .container #text{
+            width: 100%;
+        }
+
+        .container #box{
+            display: flex;
+            border: 1px solid blue;
+        }
+
+        .container #box #imgs img{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .container #box #rect{
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+
+        }
+        .container #box #rect #title{
+            background-color: blue;
+            color: white;
+            height: 40%;
+            padding-top: 0;
+        }
+        .container #box #rect #text{
+            background-color: white;
+            color: blue;
+            height: 60%;
+        }
+
+        @media(max-width: 768px) { /* 모바일 화면 즉 가로 최대길이가 768 일때 container 클래스 태그를 열로 바꾼다. */
+            .container{
+                flex-direction: column;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class = "container">
+        <div id = "headerBox">
+            <div id = "title"> Content Title01 </div>
+            <div id = "text">
+                비상계엄하의 군사재판은 군인·군무원의 범죄나 군사에 관한 간첩죄의 경우와 
+                초병 · 초소 · 유독음식물공급·포로에 관한 죄중 법률이 정한 경우에 한하여 단심으로 할 수 있다.
+            </div>
+        </div>
+    </div>
+
+    <div class = "container">
+        <div id = "box">
+            <div id = "imgs">
+                <img src = "images/Koala.jpg">
+            </div>
+            <div id = "rect">
+                <div id = "title"> Segment </div>
+                <div id = "text">
+                    비상계엄하의 군사재판은 군인·군무원의 범죄나 군사에 관한 간첩죄의 경우와 
+                    초병 · 초소 · 유독음식물공급·포로에 관한 죄중 법률이 정한 경우에 한하여 단심으로 할 수 있다.
+                </div>
+            </div>
+        </div>
+
+        <div id = "box">
+            <div id = "imgs">
+                <img src = "images/Koala.jpg">
+            </div>
+            <div id = "rect">
+                <div id = "title"> Segment </div>
+                <div id = "text">
+                    비상계엄하의 군사재판은 군인·군무원의 범죄나 군사에 관한 간첩죄의 경우와 
+                    초병 · 초소 · 유독음식물공급·포로에 관한 죄중 법률이 정한 경우에 한하여 단심으로 할 수 있다.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class = "container">
+        <div id = "box">
+            <div id = "imgs">
+                <img src = "images/Koala.jpg">
+            </div>
+            <div id = "rect">
+                <div id = "title"> Segment </div>
+                <div id = "text">
+                    비상계엄하의 군사재판은 군인·군무원의 범죄나 군사에 관한 간첩죄의 경우와 
+                    초병 · 초소 · 유독음식물공급·포로에 관한 죄중 법률이 정한 경우에 한하여 단심으로 할 수 있다.
+                </div>
+            </div>
+        </div>
+
+        <div id = "box">
+            <div id = "imgs">
+                <img src = "images/Koala.jpg">
+            </div>
+            <div id = "rect">
+                <div id = "title"> Segment </div>
+                <div id = "text">
+                    비상계엄하의 군사재판은 군인·군무원의 범죄나 군사에 관한 간첩죄의 경우와 
+                    초병 · 초소 · 유독음식물공급·포로에 관한 죄중 법률이 정한 경우에 한하여 단심으로 할 수 있다.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
