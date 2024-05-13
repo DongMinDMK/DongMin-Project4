@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +10,7 @@
 <script src = "script/board.js"></script>
 </head>
 <body>
-	<form class = "login-form" action = "board.do">
+	<form class = "login-form" action = "board.do" method = "post">
 		<input type = "hidden" name = "command" value = "login">
 		<h2>Login</h2>
 		<div class = "field">
@@ -20,10 +21,13 @@
 			<label>Password</label>
 			<input type = "password" name = "pwd">
 		</div>
+		<div class = "field">
+			${message}
+		</div>
 		
 		<div class = "login-button">
 			<input type = "submit" class = "btn-login" value = "log in">
-			<input type = "button" class = "btn-login" value = "join">
+			<input type = "button" class = "btn-login" value = "join" onClick="location.href='board.do?command=joinForm'">
 		</div>
 		<div class = "sns-login">
 			<input type = "button" class = "btn facebook" value = "Facebook">

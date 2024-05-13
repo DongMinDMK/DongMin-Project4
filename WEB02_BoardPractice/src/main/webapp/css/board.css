@@ -84,6 +84,71 @@
         background-color: rgb(214,214,27);
         color:black;
     }
+    
+	#main_container{
+	   width: 1024px;
+	   border: 1px dotted red;
+	   display:flex;
+	   flex-direction: column;
+	}
+	
+	.loginInfo{
+	   display:flex;
+	   padding: 20px 5px;
+	}
+	
+	.login{
+	   
+	}
+	
+	.writeButton{
+	   margin-left: auto;
+	}
+	
+	.board{
+	   display: flex;
+	   flex-direction: column;
+	}
+	
+	.title_row{
+	   display: flex;
+	}
+	
+	.title_col{
+	   flex: 1;
+	   background: blue;
+	   color: white;
+	   text-align: center;
+	   height: 20px;
+	   line-height: 20px;
+	   padding: 10px;
+	   margin: 2px;
+	}
+	
+	.title_col:nth-child(2){
+	   flex:4;
+	}
+	
+	.row{
+	   display: flex;
+	}
+	
+	.col{
+	   flex: 1;
+	   text-align:center;
+	   height: 20px;
+	   line-height: 20px;
+	   border: 1px dotted blue;
+	   padding: 10px;
+	   margin: 1px;
+	}
+	
+	.col:nth-child(2){
+	   flex:4;
+	   text-align:left;
+	}
+
+    
 
     @media(max-width:768px){
         .login-form{

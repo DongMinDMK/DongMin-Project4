@@ -29,14 +29,14 @@ public class BoardServlet extends HttpServlet {
 		String command = request.getParameter("command");
 		System.out.println("command : " + command);
 		
-		if(command.equals("loginForm")) {
-			ac = new LoginFormAction();
+		ActionFactory af = ActionFactory.getInstance();
+		ac = af.getAction(command);
+		
+		
+		if(ac == null) {
+			System.out.println("Action 전달 오류!!");
+		}else {
 			ac.execute(request, response);
-			
-		}else if(command.equals("login")) {
-			ac = new LoginAction();
-			ac.execute(request, response);
-			
 		}
 	}
 
