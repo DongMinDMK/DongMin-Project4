@@ -9,10 +9,14 @@ import com.himedia.dmk.controller.action.LoginAction;
 import com.himedia.dmk.controller.action.LoginFormAction;
 import com.himedia.dmk.controller.action.UpdateMemberAction;
 import com.himedia.dmk.controller.action.UpdateMemberFormAction;
+import com.himedia.dmk.controller.action.board.BoardUpdateFormAction;
+import com.himedia.dmk.controller.action.board.BoardViewAction;
+import com.himedia.dmk.controller.action.board.DeleteBoardAction;
 import com.himedia.dmk.controller.action.board.InsertBoardAction;
 import com.himedia.dmk.controller.action.board.InsertBoardFormAction;
 import com.himedia.dmk.controller.action.board.LogoutAction;
 import com.himedia.dmk.controller.action.board.MainAction;
+import com.himedia.dmk.controller.action.board.UpdateBoardAction;
 
 public class ActionFactory {
 	
@@ -60,6 +64,14 @@ public class ActionFactory {
 			ac = new InsertBoardFormAction();
 		}else if(command.equals("insertBoard")) {
 			ac = new InsertBoardAction();
+		}else if(command.equals("boardView")) {
+			ac = new BoardViewAction();
+		}else if(command.equals("boardUpdateForm")) {
+			ac = new BoardUpdateFormAction();
+		}else if(command.equals("updateBoard")) {
+			ac = new UpdateBoardAction();
+		}else if(command.equals("deleteBoard")) {
+			ac = new DeleteBoardAction();
 		}
 		
 		

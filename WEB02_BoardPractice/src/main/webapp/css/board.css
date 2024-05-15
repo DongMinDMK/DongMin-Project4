@@ -93,7 +93,7 @@
 	}
 	
 	#main_container h2{
-		margin: 20px auto;
+		margin: 0 auto;
 	}
 	
 	.insertBoard{
@@ -139,6 +139,30 @@
 	.board{
 	   display: flex;
 	   flex-direction: column;
+	   padding: 10px 5px;
+	   margin-top: 1px;
+	}
+	
+	.board .label{
+		flex:1;
+		background: blue;
+		color: white;
+		text-align: center;
+		font-weight: bold;
+		font-size: 120%;
+		padding: 10px 0;
+		margin: 1px;
+		border-radius: 8px;
+		
+	}
+	
+	.board .text{
+		flex:4;
+		font-size: 110%;
+		padding: 10px 2px;
+		border: 1px dotted blue;
+		margin: 1px;
+		
 	}
 	
 	.title_row{
@@ -178,10 +202,40 @@
 	   flex:4;
 	   text-align:left;
 	}
+	
+	.reply{
+		display: flex;
+		flex-direction: column;
+		margin-top: 10px;
+	}
+	
+	.reply_row{
+		display:flex;
+	}
+	
+	.reply_col{
+		padding: 10px;
+		text-align: center;
+		margin: 1px;
+		border: 1px dotted blue;
+		border-radius: 3px;
+	}
+	
+	.reply_col:nth-child(1){
+		flex:1;
+	}
+	.reply_col:nth-child(2){
+		flex:1;
+	}
+	.reply_col:nth-child(3){
+		flex:4;
+	}
+	.reply_col:nth-child(4){
+		flex:1;
+	}
+	
 
-    
-
-    @media(max-width:768px){
+   	@media(max-width:768px){
         .login-form{
             width:100%;
         }

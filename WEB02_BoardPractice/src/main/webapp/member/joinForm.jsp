@@ -42,7 +42,7 @@
 		
 		<div class = "login-button">
 			<input type = "submit" class = "btn-login" value = "join" onClick='return joinCheck()'>
-			<input type = "button" class = "btn-login" value = "back" onClick="location.href='member/loginForm.jsp'">
+			<input type = "button" class = "btn-login" value = "back" onClick="location.href='board.do?command=loginForm'">
 		</div>
 	</form>
 </body>

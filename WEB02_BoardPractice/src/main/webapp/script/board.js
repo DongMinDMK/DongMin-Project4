@@ -122,3 +122,40 @@ function boardCheck(){
 		return true;
 	}
 }
+
+function updateBoardCheck(pass){
+	if(document.insertBoard.pass.value == ''){
+		window.alert("비밀번호를 입력하세요...");
+		document.insertBoard.pass.focus();
+		return false;
+	}else if(document.insertBoard.email.value == ''){
+		window.alert("이메일을 입력하세요...");
+		document.insertBoard.email.focus();
+		return false;
+	}else if(document.insertBoard.title.value == ''){
+		window.alert("제목을 입력하세요...");
+		document.insertBoard.title.focus();
+		return false;
+	}else if(document.insertBoard.content.value == ''){
+		window.alert("내용을 입력하세요...");
+		document.insertBoard.content.focus();
+		return false;
+	}else if(document.insertBoard.pass.value != pass){
+		window.alert("비밀번호가 일치하지 않아 수정할 수 없습니다.");
+		document.insertBoard.pass.focus();
+		return false;
+	}else{
+		return true;
+	}
+}
+
+function deleteBoard(pass, num){
+	var inputpass = window.prompt("삭제할 게시물의 비밀번호를 입력해주세요", '');
+	
+	if(inputpass != pass){
+		window.alert("패스워드가 달라 삭제를 진행하실 수 없습니다.");
+		return;
+	}else{
+		location.href = "board.do?command=deleteBoard&num=" + num;
+	}
+}
