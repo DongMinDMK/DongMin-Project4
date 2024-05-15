@@ -10,7 +10,7 @@
 <script src = "script/board.js"></script>
 </head>
 <body>
-	<form class = "login-form" action = "board.do" method = "post">
+	<form name = "login" class = "login-form" action = "board.do" method = "post">
 		<input type = "hidden" name = "command" value = "login">
 		<h2>Login</h2>
 		<div class = "field">
@@ -26,7 +26,7 @@
 		</div>
 		
 		<div class = "login-button">
-			<input type = "submit" class = "btn-login" value = "log in">
+			<input type = "submit" class = "btn-login" value = "log in" onClick="return loginCheck()">
 			<input type = "button" class = "btn-login" value = "join" onClick="location.href='board.do?command=joinForm'">
 		</div>
 		<div class = "sns-login">

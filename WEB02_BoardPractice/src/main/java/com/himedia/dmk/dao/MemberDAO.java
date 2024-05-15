@@ -51,6 +51,8 @@ public class MemberDAO {
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			DBman.close(con, pstmt, rs);
 		}
 		
 		return memberDTO;
@@ -76,6 +78,58 @@ public class MemberDAO {
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
+		}finally {
+			DBman.close(con, pstmt, rs);
+		}
+		
+		return result;
+	}
+
+	public int memberUpdate(MemberDTO memberDTO) {
+		int result = 0;
+		
+		con = DBman.getConnection();
+		
+		String sql = "update member set name = ?, pwd = ?, email = ?, phone = ? where userid = ?";
+		
+		try {
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setString(1, memberDTO.getName());
+			pstmt.setString(2, memberDTO.getPwd());
+			pstmt.setString(3, memberDTO.getEmail());
+			pstmt.setString(4, memberDTO.getPhone());
+			pstmt.setString(5, memberDTO.getUserid());
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			DBman.close(con, pstmt, rs);
+		}
+		
+		return result;
+	}
+
+	public int deleteMember(MemberDTO memberDTO) {
+		int result = 0;
+		
+		String sql = "delete from member where userid = ?";
+		
+		con = DBman.getConnection();
+		
+		try {
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setString(1, memberDTO.getUserid());
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			DBman.close(con, pstmt, rs);
 		}
 		
 		return result;

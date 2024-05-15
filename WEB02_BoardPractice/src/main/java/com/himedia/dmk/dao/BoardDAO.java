@@ -20,13 +20,13 @@ public class BoardDAO {
 	public static BoardDAO getInstance() {
 		return boardDAO;
 	}
+	
+	Connection con = null;
+	PreparedStatement pstmt = null;
+	ResultSet rs = null;
 
 	public ArrayList<BoardDTO> boardSelectAll() {
 		ArrayList<BoardDTO> list = new ArrayList<BoardDTO>();
-		
-		Connection con = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
 		
 		String sql = "select* from board";
 		
@@ -56,6 +56,29 @@ public class BoardDAO {
 		}
 		
 		return list;
+	}
+
+	public void insertBoard(BoardDTO boardDTO) {
+		
+		con = DBman.getConnection();
+		
+		String sql = "insert into board(pass, userid, email, title, content) values(?, ?, ?, ?, ?)";
+		
+		try {
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setString(1, boardDTO.getPass());
+			pstmt.setString(2, boardDTO.getUserid());
+			pstmt.setString(3, boardDTO.getEmail());
+			pstmt.setString(4, boardDTO.getTitle());
+			pstmt.setString(5, boardDTO.getContent());
+			
+			pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
 	}
 
 }

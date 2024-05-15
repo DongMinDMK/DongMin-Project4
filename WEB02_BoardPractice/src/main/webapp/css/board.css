@@ -92,6 +92,37 @@
 	   flex-direction: column;
 	}
 	
+	#main_container h2{
+		margin: 20px auto;
+	}
+	
+	.insertBoard{
+		display: flex;
+		flex-direction: column;
+		padding: 20px;
+	}
+	
+	.insertBoard .field textarea{
+		flex:4;
+	}
+	
+	.insertBoard .field input{
+		margin: 3px;
+	}
+	
+	.insertBoard .field input:nth-child(1){
+		margin-top: 1px;
+	}
+	
+	.insertBoard .field input[type=submit]{
+		background: blue;
+		color: white;
+		padding: 15px;
+		font-weight: bold;
+		font-size: 100%;
+	}
+	
+	
 	.loginInfo{
 	   display:flex;
 	   padding: 20px 5px;

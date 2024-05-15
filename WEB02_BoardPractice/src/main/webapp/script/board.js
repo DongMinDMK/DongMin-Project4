@@ -14,6 +14,32 @@ function idCheck(){
 	
 }
 
+function loginCheck(){
+	if(document.login.userid.value == ''){
+		window.alert("아이디를 입력하세요...");
+		document.login.userid.focus();
+		return false;
+	}else if(document.login.pwd.value == ''){
+		window.alert("비밀번호를 입력하세요...");
+		document.login.pwd.focus();
+		return false;
+	}else {
+		return true;
+	}
+}
+
+function withDraw(){
+	var ans = window.confirm("정말로 삭제할까요?");
+	
+	if(ans){
+		location.href="board.do?command=deleteMember"
+		
+	}else {
+		window.alert("삭제를 원하시지 않으시기에 다시 메인으로 돌아갑니다.");
+		return;
+	}
+}
+
 function joinCheck(){
 	
 	if(document.join.userid.value == ''){
@@ -43,6 +69,54 @@ function joinCheck(){
 	}else if(document.join.userid.value != document.join.reid.value){
 		window.alert("아이디 중복확인을 먼저 진행해주세요...");
 		document.join.userid.focus();
+		return false;
+	}else{
+		return true;
+	}
+}
+
+function updateCheck(){
+	if(document.update.pwd.value == ''){
+		window.alert("비밀번호를 입력하세요...");
+		document.update.pwd.focus();
+		return false;
+	}else if(document.update.pwd.value != document.update.pwd_check.value){
+		window.alert("비밀번호가 서로 일치하지 않습니다...");
+		document.update.pwd_check.focus();
+		return false;
+	}else if(document.update.name.value == ''){
+		window.alert("이름을 입력하세요...");
+		document.update.name.focus();
+		return false;
+	}else if(document.update.email.value == ''){
+		window.alert("이메일을 입력하세요...");
+		document.update.email.focus();
+		return false;
+	}else if(document.update.phone.value == ''){
+		window.alert("전화번호를 입력하세요...");
+		document.update.phone.focus();
+		return false;
+	}else{
+		return true;
+	}
+}
+
+function boardCheck(){
+	if(document.insertBoard.pass.value == ''){
+		window.alert("비밀번호를 입력하세요...");
+		document.insertBoard.pass.focus();
+		return false;
+	}else if(document.insertBoard.email.value == ''){
+		window.alert("이메일을 입력하세요...");
+		document.insertBoard.email.focus();
+		return false;
+	}else if(document.insertBoard.title.value == ''){
+		window.alert("제목을 입력하세요...");
+		document.insertBoard.title.focus();
+		return false;
+	}else if(document.insertBoard.content.value == ''){
+		window.alert("내용을 입력하세요...");
+		document.insertBoard.content.focus();
 		return false;
 	}else{
 		return true;
