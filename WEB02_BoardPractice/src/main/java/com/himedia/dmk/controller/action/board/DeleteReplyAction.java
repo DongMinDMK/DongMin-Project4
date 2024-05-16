@@ -4,26 +4,24 @@ import java.io.IOException;
 
 import com.himedia.dmk.controller.action.Action;
 import com.himedia.dmk.dao.BoardDAO;
-import com.himedia.dmk.dto.BoardDTO;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-public class BoardViewWithoutCnt implements Action{
+public class DeleteReplyAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int num = Integer.parseInt(request.getParameter("num"));
+		int replynum = Integer.parseInt(request.getParameter("replynum"));
+		int boardnum = Integer.parseInt(request.getParameter("boardnum"));
 		
 		BoardDAO boardDAO = BoardDAO.getInstance();
-		BoardDTO boardDTO = boardDAO.getBoard(num);
+		boardDAO.deleteReply(replynum);
 		
-		request.setAttribute("board", boardDTO);
+		response.sendRedirect("board.do?command=boardViewWithoutCnt&num=" + boardnum);
 		
-		RequestDispatcher rd = request.getRequestDispatcher("board/boardView.jsp");
-		rd.forward(request, response);
 	}
 
 }

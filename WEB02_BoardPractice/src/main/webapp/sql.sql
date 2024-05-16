@@ -67,3 +67,17 @@ insert into reply(boardnum, userid, content) values(4, 'hong2', '방갑습니다
 insert into reply(boardnum, userid, content) values(4, 'hong3', '또 뵐께요 안녕하가세요');
 
 select* from reply;
+
+insert into board(pass, userid, email, title, content) values('1234', 'hong1', 'hong1@naver.com', '첫방문입니다.', '반갑습니다. 앞으로 많은 격려와 지도편달 부탁드립니다.');
+insert into board(pass, userid, email, title, content) values('1234', 'hong2', 'hong2@naver.com', '돼지골마을', '돼지 삼겹살이 맛있습니다.');
+insert into board(pass, userid, email, title, content) values('1234', 'hong3', 'hong3@naver.com', '게시판 개설.', '축하드립니다. 무궁한 발전을 기원할게요.');
+insert into board(pass, userid, email, title, content) values('1234', 'hong4', 'hong4@naver.com', '2024년 겨울.', '몹시 추울꺼 같아요... 다들 건강에 유의하세요...');
+insert into board(pass, userid, email, title, content) values('1234', 'hong5', 'hong5@naver.com', '맛집공유', '맛집공유 및 추천해주세요.');
+insert into board(pass, userid, email, title, content) values('1234', 'hong1', 'hong1@naver.com', '첫방문입니다.', '반갑습니다. 앞으로 많은 격려와 지도편달 부탁드립니다.');
+insert into board(pass, userid, email, title, content) values('1234', 'hong2', 'hong2@naver.com', '돼지골마을', '돼지 삼겹살이 맛있습니다.');
+insert into board(pass, userid, email, title, content) values('1234', 'hong3', 'hong3@naver.com', '게시판 개설.', '축하드립니다. 무궁한 발전을 기원할게요.');
+insert into board(pass, userid, email, title, content) values('1234', 'hong4', 'hong4@naver.com', '2024년 겨울.', '몹시 추울꺼 같아요... 다들 건강에 유의하세요...');
+insert into board(pass, userid, email, title, content) values('1234', 'hong5', 'hong5@naver.com', '맛집공유', '맛집공유 및 추천해주세요.');
+
+
+select* from board order by num desc limit 10 offset 5;

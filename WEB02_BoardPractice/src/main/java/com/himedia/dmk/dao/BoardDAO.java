@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import com.himedia.dmk.dto.BoardDTO;
 import com.himedia.dmk.dto.ReplyDTO;
 import com.himedia.dmk.util.DBman;
+import com.himedia.dmk.util.Paging;
 
 public class BoardDAO {
 	
@@ -26,15 +27,18 @@ public class BoardDAO {
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
 
-	public ArrayList<BoardDTO> boardSelectAll() {
+	public ArrayList<BoardDTO> boardSelectAll(Paging paging) {
 		ArrayList<BoardDTO> list = new ArrayList<BoardDTO>();
 		
-		String sql = "select* from board";
+		String sql = "select* from board order by num desc limit ? offset ?";
 		
 		con = DBman.getConnection();
 		
 		try {
 			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setInt(1, paging.getDisplayRow());
+			pstmt.setInt(2, paging.getStartNum()-1);
 			
 			rs = pstmt.executeQuery();
 			
@@ -219,6 +223,73 @@ public class BoardDAO {
 		}
 		
 		return list;
+	}
+
+	public void insertReply(ReplyDTO replyDTO) {
+		
+		con = DBman.getConnection();
+		
+		String sql = "insert into reply(boardnum, userid, content) values(?, ?, ?)";
+		
+		try {
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setInt(1, replyDTO.getBoardnum());
+			pstmt.setString(2, replyDTO.getUserid());
+			pstmt.setString(3, replyDTO.getContent());
+			
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBman.close(con, pstmt, rs);
+		}
+		
+	}
+
+	public void deleteReply(int replynum) {
+		con = DBman.getConnection();
+		
+		String sql = "delete from reply where replynum = ?";
+		
+		try {
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setInt(1, replynum);
+			
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBman.close(con, pstmt, rs);
+		}
+		
+	}
+
+	public int getAllCount() {
+		
+		int count = 0;
+		
+		con = DBman.getConnection();
+		
+		String sql = "select count(*) as cnt from board";
+		
+		try {
+			pstmt = con.prepareStatement(sql);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				count = rs.getInt("cnt");
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBman.close(con, pstmt, rs);
+		}
+		
+		return count;
 	}
 
 

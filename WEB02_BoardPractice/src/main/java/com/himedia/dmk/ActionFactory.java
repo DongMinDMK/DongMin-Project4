@@ -11,9 +11,12 @@ import com.himedia.dmk.controller.action.UpdateMemberAction;
 import com.himedia.dmk.controller.action.UpdateMemberFormAction;
 import com.himedia.dmk.controller.action.board.BoardUpdateFormAction;
 import com.himedia.dmk.controller.action.board.BoardViewAction;
+import com.himedia.dmk.controller.action.board.BoardViewWithoutCntAction;
 import com.himedia.dmk.controller.action.board.DeleteBoardAction;
+import com.himedia.dmk.controller.action.board.DeleteReplyAction;
 import com.himedia.dmk.controller.action.board.InsertBoardAction;
 import com.himedia.dmk.controller.action.board.InsertBoardFormAction;
+import com.himedia.dmk.controller.action.board.InsertReplyAction;
 import com.himedia.dmk.controller.action.board.LogoutAction;
 import com.himedia.dmk.controller.action.board.MainAction;
 import com.himedia.dmk.controller.action.board.UpdateBoardAction;
@@ -66,12 +69,18 @@ public class ActionFactory {
 			ac = new InsertBoardAction();
 		}else if(command.equals("boardView")) {
 			ac = new BoardViewAction();
+		}else if(command.equals("boardViewWithoutCnt")) {
+			ac = new BoardViewWithoutCntAction();
 		}else if(command.equals("boardUpdateForm")) {
 			ac = new BoardUpdateFormAction();
 		}else if(command.equals("updateBoard")) {
 			ac = new UpdateBoardAction();
 		}else if(command.equals("deleteBoard")) {
 			ac = new DeleteBoardAction();
+		}else if(command.equals("insertReply")) {
+			ac = new InsertReplyAction();
+		}else if(command.equals("deleteReply")) {
+			ac = new DeleteReplyAction();
 		}
 		
 		
