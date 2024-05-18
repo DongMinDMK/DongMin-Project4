@@ -52,6 +52,8 @@ public class BoardDAO {
 				boardDTO.setContent(rs.getString("content"));
 				boardDTO.setReadcount(rs.getInt("readcount"));
 				boardDTO.setWritedate(rs.getTimestamp("writedate"));
+				boardDTO.setImage(rs.getString("image"));
+				boardDTO.setSavefilename(rs.getString("savefilename"));
 				
 				list.add(boardDTO);
 			}
@@ -67,7 +69,7 @@ public class BoardDAO {
 		
 		con = DBman.getConnection();
 		
-		String sql = "insert into board(pass, userid, email, title, content) values(?, ?, ?, ?, ?)";
+		String sql = "insert into board(pass, userid, email, title, content, image, savefilename) values(?, ?, ?, ?, ?, ?, ?)";
 		
 		try {
 			pstmt = con.prepareStatement(sql);
@@ -77,6 +79,8 @@ public class BoardDAO {
 			pstmt.setString(3, boardDTO.getEmail());
 			pstmt.setString(4, boardDTO.getTitle());
 			pstmt.setString(5, boardDTO.getContent());
+			pstmt.setString(6, boardDTO.getImage());
+			pstmt.setString(7, boardDTO.getSavefilename());
 			
 			pstmt.executeUpdate();
 			
@@ -109,6 +113,8 @@ public class BoardDAO {
 				boardDTO.setContent(rs.getString("content"));
 				boardDTO.setReadcount(rs.getInt("readcount"));
 				boardDTO.setWritedate(rs.getTimestamp("writedate"));
+				boardDTO.setImage(rs.getString("image"));
+				boardDTO.setSavefilename(rs.getString("savefilename"));
 				
 		}
 			
@@ -146,7 +152,7 @@ public class BoardDAO {
 		
 		con = DBman.getConnection();
 		
-		String sql = "update board set pass=?, email=?, title=?, content=? where num = ?";
+		String sql = "update board set pass=?, email=?, title=?, content=?, image=?, savefilename=? where num = ?";
 		
 		
 		try {
@@ -156,7 +162,9 @@ public class BoardDAO {
 			pstmt.setString(2, boardDTO.getEmail());
 			pstmt.setString(3, boardDTO.getTitle());
 			pstmt.setString(4, boardDTO.getContent());
-			pstmt.setInt(5, boardDTO.getNum());
+			pstmt.setString(5, boardDTO.getImage());
+			pstmt.setString(6, boardDTO.getSavefilename());
+			pstmt.setInt(7, boardDTO.getNum());
 			
 			pstmt.executeUpdate();
 			
@@ -276,6 +284,33 @@ public class BoardDAO {
 		
 		try {
 			pstmt = con.prepareStatement(sql);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				count = rs.getInt("cnt");
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBman.close(con, pstmt, rs);
+		}
+		
+		return count;
+	}
+
+	public int getReplyCount(int num) {
+		int count = 0;
+		
+		con = DBman.getConnection();
+		
+		String sql = "select count(*) as cnt from reply where boardnum = ?";
+		
+		try {
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setInt(1, num);
 			
 			rs = pstmt.executeQuery();
 			

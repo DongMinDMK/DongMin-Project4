@@ -14,7 +14,7 @@
 	<div id = "main_container">
 		<h2>게시물 수정</h2>
 		<div class = "board">
-			<form name = "insertBoard" method = "post" action = "board.do" class = "insertBoard">
+			<form name = "insertBoard" method = "post" action = "board.do" class = "insertBoard" enctype = "multipart/form-data">
 				<input type = "hidden" name = "command" value = "updateBoard">
 				<input type = "hidden" name = "num" value = "${board.num}">
 				<div class = "field">
@@ -37,6 +37,23 @@
 				<div class = "field">
 					<label>내용</label>
 					<textarea name = "content" rows="10" cols="110">${board.content}</textarea>
+				</div>
+				<div class = "field">
+					<label>이미지</label>
+					<input type = "file" name = "image"/>
+				</div>
+				<div class = "field">
+					<label>기존이미지</label>
+					<c:choose>
+						<c:when test="${empty board.savefilename}">
+							<img src = "images/noname.jpg" width = "90" style = "text-align:right;">
+						</c:when>
+						<c:otherwise>
+							<img src = "images/${board.savefilename}" width = "90" style = "text-align:right;">
+						</c:otherwise>
+					</c:choose>
+					<input type = "hidden" name = "oldimage" value="${board.image}">
+					<input type = "hidden" name = "oldsavefilename" value = "${board.savefilename}">
 				</div>
 				<div class = "login-button">
 					<input type = "submit" class = "btn-login" value = "수정완료" onClick='return updateBoardCheck("${board.pass}")'>

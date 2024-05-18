@@ -1,6 +1,7 @@
 package com.himedia.dmk;
 
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -11,7 +12,7 @@ import com.himedia.dmk.controller.action.Action;
 import com.himedia.dmk.controller.action.LoginAction;
 import com.himedia.dmk.controller.action.LoginFormAction;
 
-
+@MultipartConfig(fileSizeThreshold = 1024*1024, maxFileSize= 1024*1024*5, maxRequestSize=1024*1024*5*5)
 public class BoardServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

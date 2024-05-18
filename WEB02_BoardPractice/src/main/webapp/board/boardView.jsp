@@ -36,8 +36,20 @@
 				</div>
 				<div class = "field">
 					<div class = "label">내용</div>
-					<div class = "text">${board.content}</div>
+					<div class = "text" style = "font-size:100%; flex:2.5;">${board.content}</div>
+					<div class = "label">이미지</div>
+					<div class = "text" style = "flex:1.5;">
+						<c:choose>
+							<c:when test="${empty board.savefilename}">
+								<img src = "images/noname.jpg" width = "300">
+							</c:when>
+							<c:otherwise>
+								<img src = "images/${board.savefilename}" width = "300">
+							</c:otherwise>
+						</c:choose>
+					</div>
 				</div>
+			
 				<div class = "login-button">
 					<input type = "button" class = "btn-login" value = "수정" onClick='location.href="board.do?command=boardUpdateForm&num=${board.num}"'>
 					<input type = "button" class = "btn-login" value = "삭제" onClick="deleteBoard('${board.pass}', '${board.num}')">

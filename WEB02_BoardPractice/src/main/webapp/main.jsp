@@ -39,7 +39,15 @@
 			<c:forEach items="${boardList}" var = "board">
 				<div class = "row">
 					<div class = "col">${board.num}</div>
-					<div class = "col"><a style = "text-decoration:none;" href = 'board.do?command=boardView&num=${board.num}'>${board.title}</a></div>
+					<div class = "col">
+						<a style = "text-decoration:none;" href = 'board.do?command=boardView&num=${board.num}'>${board.title}</a>&nbsp;
+						<c:if test="${board.replycnt > 0}">
+							<span style = "color:red; font-weight:bold;">[${board.replycnt}]</span>
+						</c:if>	
+						<c:if test="${not empty board.savefilename}">
+							<span style = "color:green;">[img]</span>
+						</c:if>
+					</div>
 					<div class = "col">${board.userid}</div>
 					<div class = "col"><fmt:formatDate value="${board.writedate}"/></div>
 					<div class = "col">${board.readcount}</div>

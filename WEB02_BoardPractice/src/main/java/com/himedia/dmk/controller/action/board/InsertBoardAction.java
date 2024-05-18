@@ -1,14 +1,19 @@
 package com.himedia.dmk.controller.action.board;
 
+import java.io.File;
 import java.io.IOException;
+import java.util.Calendar;
 
 import com.himedia.dmk.controller.action.Action;
 import com.himedia.dmk.dao.BoardDAO;
 import com.himedia.dmk.dto.BoardDTO;
 
+import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+import jakarta.servlet.http.Part;
 
 public class InsertBoardAction implements Action {
 
@@ -22,6 +27,42 @@ public class InsertBoardAction implements Action {
 		boardDTO.setEmail(request.getParameter("email"));
 		boardDTO.setTitle(request.getParameter("title"));
 		boardDTO.setContent(request.getParameter("content"));
+		
+		HttpSession session = request.getSession();
+		ServletContext context = session.getServletContext();
+		String uploadFilePath = context.getRealPath("images");
+		
+		File uploadDir = new File(uploadFilePath);
+		if(!uploadDir.exists()) uploadDir.mkdir();
+		String fileName = "";
+		
+		// 전송된 파라미터 들 중 헤더이름이 filename 이라는 이름을 가진 헤더를 찾고 그 헤더의 이름을 추출
+		for(Part part : request.getParts()) {
+			for(String content : part.getHeader("content-disposition").split(";")) {
+				if(content.trim().startsWith("filename")) {
+					fileName = content.substring(content.indexOf("=")+2, content.length()-1);
+				}
+			}
+			
+			String saveFilename = "";
+			
+			if(!fileName.equals("")) {
+				Calendar today = Calendar.getInstance();
+				long dt = today.getTimeInMillis();
+				
+				String fn1 = fileName.substring(0, fileName.indexOf("."));
+				String fn2 = fileName.substring(fileName.indexOf("."));
+				
+				saveFilename = fn1 + dt + fn2;
+				
+				part.write(uploadFilePath + File.separator + saveFilename); // 파일저장
+				
+				System.out.println("파일명 : " + fileName + " 저장완료!!!");
+				
+				boardDTO.setImage(fileName);
+				boardDTO.setSavefilename(saveFilename);
+			}
+		}
 		
 		boardDAO.insertBoard(boardDTO);
 		

@@ -81,3 +81,8 @@ insert into board(pass, userid, email, title, content) values('1234', 'hong5', '
 
 
 select* from board order by num desc limit 10 offset 5;
+
+alter table board add column image varchar(50);
+alter table board add column savefilename varchar(50);
+
+select* from board order by num desc;

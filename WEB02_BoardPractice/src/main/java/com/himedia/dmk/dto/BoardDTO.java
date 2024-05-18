@@ -12,8 +12,23 @@ public class BoardDTO {
 	private int readcount;
 	private Timestamp writedate;
 	private int replycnt;
+	private String image;
+	private String savefilename;
 	
 	
+	
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image = image;
+	}
+	public String getSavefilename() {
+		return savefilename;
+	}
+	public void setSavefilename(String savefilename) {
+		this.savefilename = savefilename;
+	}
 	public int getReplycnt() {
 		return replycnt;
 	}

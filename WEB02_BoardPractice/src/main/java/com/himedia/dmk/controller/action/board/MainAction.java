@@ -47,8 +47,15 @@ public class MainAction implements Action {
 		
 		ArrayList<BoardDTO> list = boardDAO.boardSelectAll(paging);
 		
+		for(BoardDTO boardDTO : list) {
+			// boardDTO.getNum() 으로 reply 테이블의 댓글갯수를 조회하고 결과를 boardDTO.setReplyCnt에 저장
+			count = boardDAO.getReplyCount(boardDTO.getNum());
+			boardDTO.setReplycnt(count);
+		}
+		
 		request.setAttribute("boardList", list);
 		request.setAttribute("paging", paging);
+		
 		
 		RequestDispatcher rd = request.getRequestDispatcher("main.jsp");
 		rd.forward(request, response);

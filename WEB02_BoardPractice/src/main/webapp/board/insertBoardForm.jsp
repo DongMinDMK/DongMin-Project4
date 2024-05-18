@@ -14,7 +14,7 @@
 	<div id = "main_container">
 		<h2>게시물 등록</h2>
 		<div class = "board">
-			<form name = "insertBoard" class = "insertBoard" class = "login-form" action = "board.do" method = "post">
+			<form name = "insertBoard" class = "insertBoard" class = "login-form" action = "board.do" method = "post" enctype = "multipart/form-data">
 				<input type = "hidden" name = "command" value = "insertBoard">
 				<div class = "field">
 					<label>작성자</label>
@@ -36,6 +36,11 @@
 				<div class = "field">
 					<label>내용</label>
 					<textarea name = "content" rows="10" cols="110"></textarea>	
+				</div>
+				
+				<div class = "field">
+					<label>이미지</label>
+					<input type = "file" name = "image">
 				</div>
 				<div class = "field">
 					<input type = "submit" value = "작성완료" onClick='return boardCheck()'>
