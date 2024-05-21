@@ -53,3 +53,27 @@ function addressOK(zip_num, sido, gugun, dong){
 	opener.joinForm.address1.value = sido + " " + gugun + " " + dong;
 	self.close();
 }
+
+function go_save(){
+	if(document.joinForm.userid.value==''){
+		window.alert("아이디를 먼저 입력하세요...");
+		document.joinForm.userid.focus();
+	}else if(document.joinForm.pwd.value == ''){
+		window.alert("비밀번호를 먼저 입력하세요...");
+		document.joinForm.pwd.focus();
+	}else if(document.joinForm.pwd.value != document.joinForm.pwdCheck.value){
+		window.alert("비밀번호와 비밀번호 확인이 일치하지 않습니다.  같게 입력하세요...");
+		document.joinForm.pwd.focus();
+	}else if(document.joinForm.name.value == ''){
+		window.alert("이름을 먼저 입력하세요...");
+		document.joinForm.name.focus();
+	}else if(document.joinForm.phone.value == ''){
+		window.alert("휴대폰번호를 먼저 입력하세요...");
+		document.joinForm.phone.focus();
+	}else if(document.joinForm.email.value == ''){
+		window.alert("이메일을 먼저 입력하세요...");
+		document.joinForm.email.focus();
+	}else{
+		document.joinForm.submit();
+	}
+}

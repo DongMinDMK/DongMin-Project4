@@ -2,13 +2,18 @@ package com.himedia.shop.dmk.controller;
 
 import com.himedia.shop.dmk.controller.action.Action;
 import com.himedia.shop.dmk.controller.action.IndexAction;
+import com.himedia.shop.dmk.controller.action.cart.CartInsertAction;
+import com.himedia.shop.dmk.controller.action.cart.CartListAction;
 import com.himedia.shop.dmk.controller.action.member.ContractAction;
 import com.himedia.shop.dmk.controller.action.member.FindZipNumAction;
 import com.himedia.shop.dmk.controller.action.member.IdCheckAction;
+import com.himedia.shop.dmk.controller.action.member.JoinAction;
 import com.himedia.shop.dmk.controller.action.member.JoinFormAction;
 import com.himedia.shop.dmk.controller.action.member.LoginAction;
 import com.himedia.shop.dmk.controller.action.member.LoginFormAction;
 import com.himedia.shop.dmk.controller.action.member.LogoutAction;
+import com.himedia.shop.dmk.controller.action.product.CategoryAction;
+import com.himedia.shop.dmk.controller.action.product.ProductDetailAction;
 
 public class ActionFactory {
 	
@@ -36,6 +41,15 @@ public class ActionFactory {
 		else if(command.equals("joinForm")) ac = new JoinFormAction();
 		else if(command.equals("idCheck")) ac = new IdCheckAction();
 		else if(command.equals("findZipNum")) ac = new FindZipNumAction();
+		else if(command.equals("join")) ac = new JoinAction();
+		
+		// product
+		else if(command.equals("category")) ac = new CategoryAction();
+		else if(command.equals("productDetail")) ac = new ProductDetailAction();
+		
+		// cart
+		else if(command.equals("cartInsert")) ac = new CartInsertAction();
+		else if(command.equals("cartList")) ac = new CartListAction();
 		
 		return ac;
 	}

@@ -152,7 +152,7 @@ select* from cart;
 
 ​
 
--- cart 안의 pseq 로 상품이름과 그리고 userid로 사용자 이름을 함계 조회하는 view를 작성합니다.
+-- cart 안의 pseq 로 상품이름과 그리고 userid로 사용자 이름을 함께 조회하는 view를 작성합니다.
 
 create or replace view cart_view as
 
@@ -232,3 +232,9 @@ SELECT* from product;
 select* from member;
 
 select* from address;
+
+select* from cart_view;
+
+select* from cart;
+
+select* from member;

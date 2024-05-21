@@ -23,12 +23,12 @@
 			</c:choose>
 			<div id = "item">
 				<div>
-					<a href="productDetail?pseq=${productDTO.pseq}">
+					<a href="shop.do?command=productDetail&pseq=${productDTO.pseq}">
 						<img src="product_images/${productDTO.image}">
 					</a>
 				</div>
 				<div>
-					<a href="productDetail?pseq=${productDTO.pseq}">
+					<a href="shop.do?command=productDetail&pseq=${productDTO.pseq}">
 						${productDTO.name}-	<fmt:formatNumber value="${productDTO.price2}" type="currency"></fmt:formatNumber>
 					</a>
 				</div>
@@ -62,12 +62,12 @@
 			</c:choose>
 			<div id = "item">
 				<div>
-					<a href="productDetail?pseq=${productDTO.pseq}">
+					<a href="shop.do?command=productDetail&pseq=${productDTO.pseq}">
 						<img src="product_images/${productDTO.image}">
 					</a>
 				</div>
 				<div>
-					<a href="productDetail?pseq=${productDTO.pseq}">
+					<a href="shop.do?command=productDetail&pseq=${productDTO.pseq}">
 						${productDTO.name}-<fmt:formatNumber value="${productDTO.price2}" type="currency"></fmt:formatNumber>
 					</a>
 				</div>

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+    
 <%@ include file= "../header.jsp" %>
 
 <section>
@@ -54,7 +56,7 @@
 				<input type = "text" name = "address2">
 			</div>
 			<div class = "btn">
-				<input type = "button" value = "회원가입" onClick="go_Save();">
+				<input type = "button" value = "회원가입" onClick="go_save()">
 				<input type = "button" value = "메인으로 이동" onClick="location.href='shop.do?command=index'">
 			</div>
 		</form>
