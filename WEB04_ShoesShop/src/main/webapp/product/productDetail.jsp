@@ -28,7 +28,7 @@
 					
 					<div class="btn">
 						<input type="submit" value="장바구니에 담기" onClick="return go_cart()">
-						<input type="button" value="즉시 구매" onClick="">
+						<input type="button" value="즉시 구매" onClick="go_order()">
 						<input type="button" value="메인으로" onClick="location.href='shop.do?command=index'">
 					</div>
 				</div>

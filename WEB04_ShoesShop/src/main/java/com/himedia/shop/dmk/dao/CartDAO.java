@@ -89,6 +89,62 @@ public class CartDAO {
 		return list;
 	}
 
+	public void deleteCart(int cseq) {
+		con = DBman.getConnection();
+		
+		String sql = "delete from cart where cseq = ?";
+		
+		try {
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setInt(1, cseq);
+			
+			pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBman.close(con, pstmt, rs);
+		}
+	}
+
+	public CartDTO getCart(String cseq) {
+		CartDTO cartDTO = null;
+		
+		con = DBman.getConnection();
+		
+		String sql = "select* from cart_view where cseq = ?";
+		
+		try {
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setInt(1, Integer.parseInt(cseq));
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				cartDTO = new CartDTO();
+				
+				cartDTO.setCseq(rs.getInt("cseq"));
+				cartDTO.setUserid(rs.getString("userid"));
+				cartDTO.setMname(rs.getString("mname"));
+				cartDTO.setPseq(rs.getInt("pseq"));
+				cartDTO.setPname(rs.getString("pname"));
+				cartDTO.setQuantity(rs.getInt("quantity"));
+				cartDTO.setPrice2(rs.getInt("price2"));
+				cartDTO.setIndate(rs.getTimestamp("indate"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBman.close(con, pstmt, rs);
+		}
+		
+		
+		return cartDTO;
+	}
+
+
 	
 
 }

@@ -20,7 +20,7 @@
 		<header>
 			<nav id = "top_menu">
 				<div id = "logo">
-					<a href="/">
+					<a href="shop.do?command=index">
 						<img src = "images/logo.png" width="180" height = "100">
 					</a>
 				</div>
@@ -36,7 +36,7 @@
 						</c:otherwise>
 					</c:choose>
 					
-					<a href="">CART(장바구니)</a>
+					<a href="shop.do?command=cartList">CART(장바구니)</a>
 					<a href="">MY PAGE(마이페이지)</a>
 					<a href="">고객센터</a>
 				</div>

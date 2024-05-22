@@ -202,6 +202,8 @@ where o.oseq = od.oseq and o.userid = m.userid and od.pseq = p.pseq;
 
 select* from order_view;
 
+select* from order_detail;
+
 ​
 select* from product;
 
@@ -238,3 +240,8 @@ select* from cart_view;
 select* from cart;
 
 select* from member;
+
+select* from orders;
+select* from order_detail;
+
+select* from order_view;

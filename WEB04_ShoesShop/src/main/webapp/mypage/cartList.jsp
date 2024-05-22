@@ -19,13 +19,13 @@
 							<div class="coltitle">수량</div>
 							<div class="coltitle">가격</div>
 							<div class="coltitle">주문일</div>
-							<div class="coltitle">삭제</div>
+							<div class="coltitle">주문선택/삭제</div>
 						</div>
 						<c:forEach items="${cartList}" var="cartDTO">
 							<div class="row">
 								<div class="col">${cartDTO.pname}</div>
 								<div class="col">${cartDTO.quantity}</div>
-								<div class="col">${cartDTO.price2}</div>
+								<div class="col"><fmt:formatNumber value="${cartDTO.price2}" type="currency"></fmt:formatNumber></div>
 								<div class="col"><fmt:formatDate value="${cartDTO.indate}"/></div>
 								<div class="col">
 									<input type="checkbox" name="cseq" value="${cartDTO.cseq}">

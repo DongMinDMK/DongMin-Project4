@@ -2,8 +2,12 @@ package com.himedia.shop.dmk.controller;
 
 import com.himedia.shop.dmk.controller.action.Action;
 import com.himedia.shop.dmk.controller.action.IndexAction;
+import com.himedia.shop.dmk.controller.action.cart.CartDeleteAction;
 import com.himedia.shop.dmk.controller.action.cart.CartInsertAction;
 import com.himedia.shop.dmk.controller.action.cart.CartListAction;
+import com.himedia.shop.dmk.controller.action.cart.OrderInsertAction;
+import com.himedia.shop.dmk.controller.action.cart.OrderInsertOneAction;
+import com.himedia.shop.dmk.controller.action.cart.OrderListAction;
 import com.himedia.shop.dmk.controller.action.member.ContractAction;
 import com.himedia.shop.dmk.controller.action.member.FindZipNumAction;
 import com.himedia.shop.dmk.controller.action.member.IdCheckAction;
@@ -47,9 +51,14 @@ public class ActionFactory {
 		else if(command.equals("category")) ac = new CategoryAction();
 		else if(command.equals("productDetail")) ac = new ProductDetailAction();
 		
-		// cart
+		// mypage
 		else if(command.equals("cartInsert")) ac = new CartInsertAction();
 		else if(command.equals("cartList")) ac = new CartListAction();
+		else if(command.equals("cartDelete")) ac = new CartDeleteAction();
+		else if(command.equals("orderInsert")) ac = new OrderInsertAction();
+		else if(command.equals("orderList")) ac = new OrderListAction();
+		else if(command.equals("orderInsertOne")) ac = new OrderInsertOneAction();
+		
 		
 		return ac;
 	}
