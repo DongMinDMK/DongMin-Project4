@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.himedia.shop.dmk.dto.CartDTO;
+import com.himedia.shop.dmk.dto.MemberDTO;
 import com.himedia.shop.dmk.dto.OrderDTO;
 import com.himedia.shop.dmk.util.DBman;
 
@@ -155,6 +156,97 @@ public class OrderDAO {
 		}finally {
 			DBman.close(con, pstmt, rs);
 		}
+	}
+
+	public ArrayList<Integer> selectOseqOrderIng(String userid) {
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		
+		con = DBman.getConnection();
+		
+		String sql = "select distinct oseq from order_view where userid = ? and result='1'";
+		
+		try {
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setString(1, userid);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				list.add(rs.getInt("oseq"));
+			}
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBman.close(con, pstmt, rs);
+		}
+		
+		
+		return list;
+		
+		
+		
+		
+	}
+
+	public ArrayList<Integer> selectOseqOrderAll(String userid) {
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		
+		con = DBman.getConnection();
+		
+		String sql = "select distinct oseq from order_view where userid = ?";
+		
+		try {
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setString(1, userid);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				list.add(rs.getInt("oseq"));
+			}
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBman.close(con, pstmt, rs);
+		}
+		
+		
+		return list;
+	}
+
+	public void memberUpdate(MemberDTO memberDTO) {
+		con = DBman.getConnection();
+		
+		String sql = "update member set pwd=?, name=?, phone=?, email=?, zip_num=?, address1=?, address2=? where userid = ?";
+		
+		try {
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setString(1, memberDTO.getPwd());
+			pstmt.setString(2, memberDTO.getName());
+			pstmt.setString(3, memberDTO.getPhone());
+			pstmt.setString(4, memberDTO.getEmail());
+			pstmt.setString(5, memberDTO.getZip_num());
+			pstmt.setString(6, memberDTO.getAddress1());
+			pstmt.setString(7, memberDTO.getAddress2());
+			pstmt.setString(8, memberDTO.getUserid());
+			
+			pstmt.executeUpdate();
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBman.close(con, pstmt, rs);
+		}
+		
+		
 	}
 
 }

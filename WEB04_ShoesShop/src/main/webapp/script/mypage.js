@@ -82,3 +82,24 @@ function go_order(){
 		return;
 	}
 }
+
+function go_updateMember(){
+	if(document.joinForm.pwd.value== ''){
+		window.alert("비밀번호를 입력하세요...");
+		document.joinForm.pwd.focus();
+	}else if(document.joinForm.pwd.value != document.joinForm.pwdCheck.value){
+		window.alert("비밀번호와 비밀번호 확인이 일치하지 않습니다...");
+		document.joinForm.pwd.focus();
+	}else if(document.joinForm.name.value==''){
+		window.alert("이름을 입력하세요...");
+		document.joinForm.name.focus();
+	}else if(document.joinForm.phone.value==''){
+		window.alert("휴대폰번호를 입력하세요...");
+		document.joinForm.phone.focus();
+	}else if(document.joinForm.email.value==''){
+		window.alert("이메일주소를 입력하세요...");
+		document.joinForm.email.focus();
+	}else{
+		document.joinForm.submit();
+	}
+}

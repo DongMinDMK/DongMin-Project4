@@ -13,7 +13,7 @@
 			<form method="post" name="formm" style="display:flex; flex-direction:column; align-content:center; border:1px solid blue;" 
 				  action="shop.do?command=cartInsert">
 				<div id="itemdetail">
-					<div class="itemdetail=img=title">
+					<div class="itemdetail-img-title">
 						<div><img src="product_images/${productDTO.savefilename}"></div>
 						<div>
 							<label> 가 격 : </label>${productDTO.price2} 원<br>

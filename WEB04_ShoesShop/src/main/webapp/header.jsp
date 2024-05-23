@@ -37,7 +37,7 @@
 					</c:choose>
 					
 					<a href="shop.do?command=cartList">CART(장바구니)</a>
-					<a href="">MY PAGE(마이페이지)</a>
+					<a href="shop.do?command=mypage">MY PAGE(마이페이지)</a>
 					<a href="">고객센터</a>
 				</div>
 				<div class = "hmenu"><div></div><div></div><div></div>      </div>

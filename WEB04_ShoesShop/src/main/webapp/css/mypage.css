@@ -1,7 +1,5 @@
 @charset "UTF-8";
 
-@charset "UTF-8";
-
 .tb{
    border-top:2px solid blueviolet;
    border-bottom:2px solid blueviolet;
@@ -19,7 +17,7 @@
    border-bottom:2px solid blueviolet;
 }
 .row:last-child{
-   border-bottom:none;
+  /*  border-bottom:none; */
 }
 .coltitle{
    font-weight:bold;
