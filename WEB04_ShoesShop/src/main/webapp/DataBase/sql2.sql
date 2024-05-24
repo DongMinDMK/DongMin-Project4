@@ -245,3 +245,5 @@ select* from orders;
 select* from order_detail;
 
 select* from order_view;
+
+select* from qna;
