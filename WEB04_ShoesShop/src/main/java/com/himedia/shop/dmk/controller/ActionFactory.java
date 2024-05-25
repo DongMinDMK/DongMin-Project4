@@ -20,6 +20,9 @@ import com.himedia.shop.dmk.controller.action.mypage.MyPageAction;
 import com.himedia.shop.dmk.controller.action.mypage.OrderAllAction;
 import com.himedia.shop.dmk.controller.action.mypage.OrderDetailAction;
 import com.himedia.shop.dmk.controller.action.mypage.QnaListAction;
+import com.himedia.shop.dmk.controller.action.mypage.QnaViewAction;
+import com.himedia.shop.dmk.controller.action.mypage.QnaWriteAction;
+import com.himedia.shop.dmk.controller.action.mypage.QnaWriteFormAction;
 import com.himedia.shop.dmk.controller.action.mypage.UpdateMemberAction;
 import com.himedia.shop.dmk.controller.action.mypage.UpdateMemberFormAction;
 import com.himedia.shop.dmk.controller.action.product.CategoryAction;
@@ -70,6 +73,9 @@ public class ActionFactory {
 		else if(command.equals("updateMemberForm")) ac = new UpdateMemberFormAction();
 		else if(command.equals("updateMember")) ac = new UpdateMemberAction();
 		else if(command.equals("qnaList")) ac = new QnaListAction();
+		else if(command.equals("qnaView")) ac = new QnaViewAction();
+		else if(command.equals("qnaWriteForm")) ac = new QnaWriteFormAction();
+		else if(command.equals("qnaWrite")) ac = new QnaWriteAction();
 		
 		return ac;
 	}

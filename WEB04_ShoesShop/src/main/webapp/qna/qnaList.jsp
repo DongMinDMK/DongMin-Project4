@@ -17,7 +17,7 @@
 						<c:forEach items="${qnaList}" var="qnaDTO">
 							<div class="row">
 								<div class="col">${qnaDTO.qseq}</div>
-								<div class="col">${qnaDTO.subject}</div>
+								<div class="col"><a href="shop.do?command=qnaView&qseq=${qnaDTO.qseq}">${qnaDTO.subject}</a></div>
 								<div class="col"><fmt:formatDate value="${qnaDTO.indate}"/></div>
 								<div class="col">
 									<c:choose>

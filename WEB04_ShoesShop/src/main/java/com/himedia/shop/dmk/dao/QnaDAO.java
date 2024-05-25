@@ -60,4 +60,60 @@ public class QnaDAO {
 		
 		return list;
 	}
+
+	public QnaDTO getOneSelect(int qseq) {
+		QnaDTO qnaDTO = null;
+		
+		con = DBman.getConnection();
+		
+		String sql = "select* from qna where qseq=?";
+		
+		try {
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setInt(1, qseq);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				qnaDTO = new QnaDTO();
+				
+				qnaDTO.setQseq(rs.getInt("qseq"));
+				qnaDTO.setUserid(rs.getString("userid"));
+				qnaDTO.setSubject(rs.getString("subject"));
+				qnaDTO.setContent(rs.getString("content"));
+				qnaDTO.setReply(rs.getString("reply"));
+				qnaDTO.setIndate(rs.getTimestamp("indate"));
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBman.close(con, pstmt, rs);
+		}
+		
+		
+		return qnaDTO;
+	}
+
+	public void insertQna(QnaDTO qnaDTO) {
+		con = DBman.getConnection();
+		
+		String sql = "insert into qna(userid, subject, content) values(?,?,?)";
+		
+		try {
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setString(1, qnaDTO.getUserid());
+			pstmt.setString(2, qnaDTO.getSubject());
+			pstmt.setString(3, qnaDTO.getContent());
+			
+			pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBman.close(con, pstmt, rs);
+		}
+	}
 }
