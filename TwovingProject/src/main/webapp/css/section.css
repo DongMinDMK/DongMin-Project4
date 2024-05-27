@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+a{
+	text-decoration: none;
+}
+
+section{
+	width: 100%;
+	display:flex;
+	flex-direction:column;
+}
+
+section article{
+	width: 100%;
+	border: 1px solid white;
+	display:flex;
+	flex-direction:column;
+}
+
+section article .costitle{
+	color:white;
+	font-weight: bold;
+	font-size: 150%;
+	
+}
+
+section article .cosmenu_wrapper{
+	display:flex;
+	border-bottom: 1px solid gray;
+}
+
+section article .cosmenu{
+	color:gray;
+	padding: 20px;
+	font-size: 120%;
+}
+
+section article .notice_table{
+}
+
+section article .notice_table table{
+	border: 1px solid white;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	background-color: gray;
+	opacity: 0.5;
+}
+
+tr{
+	display: flex;
+}
+
+th{
+	color: white;
+	padding: 30px;
+	
+}
+
+
+
+.rowpage{
+	display:flex;
+	border: 1px dotted white;
+}
+
+.colpage{
+	display:flex;
+	padding: 10px;
+}
+
+
+
