@@ -4,13 +4,64 @@ public class CustomerInquiryVO {
 	
 	private int ciseq;
 	private String name;
+	private String email;
 	private String phone;
 	private String inquiryList; //문의종류
-	private String device; // 디바이스
-	private String runtime; //이용시간(문의할 때 사용한 이용시간)
+	private String devicephone; // 디바이스폰
+	private String devicemodelname; //디바이스모델명
+	private String conenvironment; //통신환경
+	private String runplace; // 이용장소
+	private String runtime1; //이용시간(문의할 때 사용한 이용시간)
+	private String runtime2; //이용시간(문의할 때 사용한 이용시간)
 	private String runcontent; //이용콘텐츠
 	private String inquirytitle; //문의제목
 	private String inquirycontent; //문의내용
+	
+	
+	
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	public String getConenvironment() {
+		return conenvironment;
+	}
+	public void setConenvironment(String conenvironment) {
+		this.conenvironment = conenvironment;
+	}
+	public String getRunplace() {
+		return runplace;
+	}
+	public void setRunplace(String runplace) {
+		this.runplace = runplace;
+	}
+	public String getDevicephone() {
+		return devicephone;
+	}
+	public void setDevicephone(String devicephone) {
+		this.devicephone = devicephone;
+	}
+	public String getDevicemodelname() {
+		return devicemodelname;
+	}
+	public void setDevicemodelname(String devicemodelname) {
+		this.devicemodelname = devicemodelname;
+	}
+	public String getRuntime1() {
+		return runtime1;
+	}
+	public void setRuntime1(String runtime1) {
+		this.runtime1 = runtime1;
+	}
+	public String getRuntime2() {
+		return runtime2;
+	}
+	public void setRuntime2(String runtime2) {
+		this.runtime2 = runtime2;
+	}
 	public int getCiseq() {
 		return ciseq;
 	}
@@ -34,18 +85,6 @@ public class CustomerInquiryVO {
 	}
 	public void setInquiryList(String inquiryList) {
 		this.inquiryList = inquiryList;
-	}
-	public String getDevice() {
-		return device;
-	}
-	public void setDevice(String device) {
-		this.device = device;
-	}
-	public String getRuntime() {
-		return runtime;
-	}
-	public void setRuntime(String runtime) {
-		this.runtime = runtime;
 	}
 	public String getRuncontent() {
 		return runcontent;

@@ -3,7 +3,6 @@
 a{
 	text-decoration: none;
 }
-
 section{
 	width: 100%;
 	display:flex;
@@ -12,7 +11,7 @@ section{
 
 section article{
 	width: 100%;
-	border: 1px solid white;
+	/* border: 1px solid white; */
 	display:flex;
 	flex-direction:column;
 }
@@ -36,15 +35,60 @@ section article .cosmenu{
 }
 
 section article .notice_table{
+	width: 100%;
 }
 
 section article .notice_table table{
+	margin-left: 30px;
+	display:flex;
+	flex-direction:column;
+}
+
+section article .notice_table table .trow{
 	border: 1px solid white;
 	display:flex;
 	justify-content: center;
 	align-items: center;
 	background-color: gray;
 	opacity: 0.5;
+}
+
+.form-box1-presemi{
+	display: flex;
+	flex-direction: column;
+}
+
+.form-box-semi1{
+	display:flex;
+}
+
+.form-box-semi1 h4{
+	color: white;
+	margin-left: 20px;
+}
+
+.form-box-semi2{
+	float: left;
+	
+}
+
+.form-box-semi2 h4{
+	color : white;
+}
+
+
+
+.notice_row{
+	 border-bottom: 1px solid white;
+}
+
+.notice_col{
+	color: white;
+}
+
+.form-box1{
+	display: flex;
+	flex-direction:column;
 }
 
 tr{
@@ -57,7 +101,98 @@ th{
 	
 }
 
+.notice_table .notice_row{
+	width:100%;
+}
 
+.notice_table .notice_col{
+	width:100%;
+	padding: 10px;
+}
+
+p{
+	color: white;
+	font-size: 90%;
+}
+
+/* .form-box1 h4{
+	color: white;
+	font-size: 110%;
+}
+ */
+.inquiryClassForm{
+	display:flex;
+	flex-direction: column;
+	margin-left: 100px;
+}
+
+.rd{
+	margin:0 auto;
+}
+
+span{
+	color:white;
+	font-size: 120%;
+
+}
+
+.field{
+	/* border-top: 1px solid white; */
+	border-bottom: 1px solid gray;
+	padding: 20px;
+	display:flex;
+	/* justify-content: center; */
+	align-items: center;
+}
+
+.topic_menu{
+	background-color:gray;
+	opacity:0.5;
+}
+.question{
+	font-weight: bold;
+	text-align:center;
+}
+
+.rdo{
+	color: white;
+}
+
+.field h5{
+	color:white;
+	font-size: 90%;
+}
+
+.defuse{
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+}
+
+.defuse .defuse-title{
+	display:flex;
+	flex-direction:column;
+}
+
+.defuse .defuse-title img{
+	margin: 0 auto;
+}
+
+.defuse .defuse-title h2{
+	color: white;
+	font-weight: bold;
+}
+
+.defuse .defuse-title p{
+	color: gray;
+	
+}
+
+.defuse .defuse-bottom input{
+	width: 300px;
+	padding: 20px;
+}
 
 .rowpage{
 	display:flex;
