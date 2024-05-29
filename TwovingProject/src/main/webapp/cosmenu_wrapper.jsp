@@ -8,7 +8,7 @@
 </head>
 <body>
 	<a href="twoving.do?command=notice" class="cosmenu">공지사항</a>
-	<a href="" class="cosmenu">FAQ</a>
+	<a href="twoving.do?command=faq" class="cosmenu">FAQ</a>
 	<a href="twoving.do?command=customerinquiry" class="cosmenu">고객문의</a>
 	<a href="twoving.do?command=nexttimedefuse" class="cosmenu">다음 회차 결제 해지</a>
 </body>

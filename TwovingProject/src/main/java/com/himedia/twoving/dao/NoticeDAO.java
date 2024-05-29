@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.himedia.twoving.util.DBman;
+import com.himedia.twoving.util.Paging;
 import com.himedia.twoving.vo.NoticeVO;
 
 public class NoticeDAO {
@@ -50,26 +51,30 @@ public class NoticeDAO {
 		return count;
 	}
 
-	public ArrayList<NoticeVO> adminProductList() {
+	public ArrayList<NoticeVO> adminProductList(Paging paging) {
 		ArrayList<NoticeVO> list = new ArrayList<NoticeVO>();
 		
 		con = DBman.getConnection();
 		
-		String  sql = "select* from notice order by noticeid desc";
+		String  sql = "select* from notice where noticeyn='N' order by nseq desc limit ? offset ?";
 		
 		try {
 			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setInt(1, paging.getDisplayRow());
+			pstmt.setInt(2, paging.getStartNum()-1);
 			
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
 				NoticeVO noticeVO = new NoticeVO();
-				noticeVO.setNoticeid(rs.getInt("noticeid"));
+				noticeVO.setNseq(rs.getInt("nseq"));
 				noticeVO.setUserid(rs.getString("userid"));
 				noticeVO.setTitle(rs.getString("title"));
 				noticeVO.setContent(rs.getString("content"));
 				noticeVO.setIndate(rs.getTimestamp("indate"));
 				noticeVO.setReadcount(rs.getInt("readcount"));
+				noticeVO.setNoticeyn(rs.getString("noticeyn"));
 				
 				list.add(noticeVO);
 				
@@ -81,5 +86,23 @@ public class NoticeDAO {
 		}
 		
 		return list;
+	}
+
+	public void updateCount(int nseq) {
+		con = DBman.getConnection();
+		
+		String sql = "update notice set readcount=readcount+1 where nseq=?";
+		
+		try {
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setInt(1, nseq);
+			
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBman.close(con, pstmt, rs);
+		}
 	}
 }

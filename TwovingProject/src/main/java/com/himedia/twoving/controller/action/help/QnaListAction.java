@@ -47,7 +47,7 @@ public class QnaListAction implements Action {
 		String runtime1 = request.getParameter("time1");
 		String runtime2 = request.getParameter("time2");
 		
-		String conenvironment = request.getParameter("conenvironment");
+		String runenvironment = request.getParameter("runenvironment");
 		
 		String runplace = request.getParameter("runplace");
 		
@@ -64,7 +64,7 @@ public class QnaListAction implements Action {
 		civo.setInquiryList(inquiry);
 		civo.setDevicephone(devicephone);
 		civo.setDevicemodelname(devicemodelname);
-		civo.setConenvironment(conenvironment);
+		civo.setRunenvironment(runenvironment);
 		civo.setRunplace(runplace);
 		civo.setRuntime1(runtime1);
 		civo.setRuntime2(runtime2);

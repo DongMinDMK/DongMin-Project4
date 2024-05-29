@@ -2,6 +2,7 @@
 
 a{
 	text-decoration: none;
+	font-family: 'Times New Roman';
 }
 section{
 	width: 100%;
@@ -14,6 +15,29 @@ section article{
 	/* border: 1px solid white; */
 	display:flex;
 	flex-direction:column;
+}
+
+section article .search{
+	background-color: gray;
+	padding: 70px;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 0.5;
+}
+
+section article .search input{
+	background-color: gray;
+	padding : 20px;
+	width: 500px;
+	border-top: none;
+	border-left: none;
+	border-bottom: 1px solid white;
+}
+
+section article .search input placeholder{
+	color : white;
+	font-size: 80%;
 }
 
 section article .costitle{
@@ -34,6 +58,13 @@ section article .cosmenu{
 	font-size: 120%;
 }
 
+section article table .fnq-trow{
+	display: flex;
+	border-bottom: 1px solid gray;
+	justify-content:space-between;
+}
+
+
 section article .notice_table{
 	width: 100%;
 }
@@ -47,12 +78,25 @@ section article .notice_table table{
 section article .notice_table table .trow{
 	border: 1px solid white;
 	display:flex;
-	justify-content: center;
-	align-items: center;
+	justify-content: space-around;
 	background-color: gray;
 	opacity: 0.5;
 }
 
+section article .defuse{
+	padding: 40px;
+}
+
+.inquiryCategory {
+	display:flex;
+}
+
+.inquiryCategory a{
+	color: gray;
+	font-weight: bold;
+	font-size: 120%;
+	padding: 30px;
+}
 .form-box1-presemi{
 	display: flex;
 	flex-direction: column;
@@ -79,7 +123,9 @@ section article .notice_table table .trow{
 
 
 .notice_row{
-	 border-bottom: 1px solid white;
+	 border-bottom: 1px solid gray;
+	 display:flex;
+	 justify-content: space-between;
 }
 
 .notice_col{
@@ -105,9 +151,10 @@ th{
 	width:100%;
 }
 
-.notice_table .notice_col{
+.notice_table .notice_row .notice_col{
 	width:100%;
 	padding: 10px;
+	margin-left: 215px;
 }
 
 p{
@@ -136,14 +183,38 @@ span{
 
 }
 
+label{
+	color:white;
+	font-size: 120%;
+}
+
 .field{
 	/* border-top: 1px solid white; */
 	border-bottom: 1px solid gray;
-	padding: 20px;
+	padding: 15px;
 	display:flex;
 	/* justify-content: center; */
 	align-items: center;
 }
+
+.field select{
+	background-color: black;
+	padding: 10px;
+	color:gray;
+}
+
+
+
+.field input{
+	background-color: gray;
+	padding : 10px;
+	opacity: 0.3;
+}
+
+.field input::placeholder{
+	color: white;
+}
+
 
 .topic_menu{
 	background-color:gray;
@@ -194,14 +265,25 @@ span{
 	padding: 20px;
 }
 
+.detail-button{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.detail-button input{
+	width: 80px;
+	height: 50px;
+}
+
+
 .rowpage{
 	display:flex;
-	border: 1px dotted white;
 }
 
 .colpage{
 	display:flex;
-	padding: 10px;
+	padding: 15px;
 }
 
 

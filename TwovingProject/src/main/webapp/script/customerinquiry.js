@@ -29,4 +29,6 @@ function inquiryCheck(){
 	}else{
 		return true;
 	}
-}	
+}
+
+

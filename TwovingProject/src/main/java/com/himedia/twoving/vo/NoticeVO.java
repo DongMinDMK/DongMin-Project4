@@ -3,18 +3,28 @@ package com.himedia.twoving.vo;
 import java.sql.Timestamp;
 
 public class NoticeVO {
-	private Integer noticeid;
+	private Integer nseq;
 	private String userid;
 	private String title;
 	private String content;
 	private Timestamp indate;
 	private Integer readcount;
-	public Integer getNoticeid() {
-		return noticeid;
+	private String noticeyn;
+	
+	
+	public Integer getNseq() {
+		return nseq;
 	}
-	public void setNoticeid(Integer noticeid) {
-		this.noticeid = noticeid;
+	public void setNseq(Integer nseq) {
+		this.nseq = nseq;
 	}
+	public String getNoticeyn() {
+		return noticeyn;
+	}
+	public void setNoticeyn(String noticeyn) {
+		this.noticeyn = noticeyn;
+	}
+	
 	public String getUserid() {
 		return userid;
 	}

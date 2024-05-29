@@ -9,7 +9,7 @@ public class CustomerInquiryVO {
 	private String inquiryList; //문의종류
 	private String devicephone; // 디바이스폰
 	private String devicemodelname; //디바이스모델명
-	private String conenvironment; //통신환경
+	private String runenvironment; //이용환경
 	private String runplace; // 이용장소
 	private String runtime1; //이용시간(문의할 때 사용한 이용시간)
 	private String runtime2; //이용시간(문의할 때 사용한 이용시간)
@@ -19,19 +19,19 @@ public class CustomerInquiryVO {
 	
 	
 	
+	public String getRunenvironment() {
+		return runenvironment;
+	}
+	public void setRunenvironment(String runenvironment) {
+		this.runenvironment = runenvironment;
+	}
 	public String getEmail() {
 		return email;
 	}
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	public String getConenvironment() {
-		return conenvironment;
-	}
-	public void setConenvironment(String conenvironment) {
-		this.conenvironment = conenvironment;
-	}
+
 	public String getRunplace() {
 		return runplace;
 	}
