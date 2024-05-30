@@ -210,13 +210,14 @@
 				
 				<div class="field">
 						<span>이용장소</span>&nbsp;&nbsp;&nbsp;
-						<input type="text" name="runplace">
+						<input type="text" name="runplace" placeholder="이용장소를 선택해주세요(집,버스 등)" size=50>
 				</div>
 					
 				<div class="field">
 					<span>문의 제목*</span>&nbsp;&nbsp;&nbsp;&nbsp;
 					<input type="text" name="inquirytitle" placeholder="문의 제목을 입력해주세요." size=50>
 				</div>	
+				
 				<div class="field">
 					<span>문의 내용*</span>&nbsp;&nbsp;&nbsp;&nbsp;
 					<textarea rows="10" cols="100" placeholder="문의 내용을 입력해주세요." name="inquirycontent"></textarea>

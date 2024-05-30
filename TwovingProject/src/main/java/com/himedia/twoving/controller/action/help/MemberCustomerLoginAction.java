@@ -15,22 +15,14 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-public class FaqAction implements Action {
+public class MemberCustomerLoginAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		HttpSession session = request.getSession();
 		MemberVO memberVO = (MemberVO)session.getAttribute("loginUser");
 		
-		// CustomerInquiryDAO cidao = CustomerInquiryDAO.getInstance();
-		// CustomerInquiryVO civo = new CustomerInquiryVO();
-		
-		// String[] inquiryLists = {"전체", "회원/로그인", "이용권/결제", "재생/오류", "해지/환불", "서비스 이용"};
-		
-		// int index = Integer.parseInt(civo.getInquiryList());
-		
-		// request.setAttribute("inquiryList", inquiryLists);
+		String memberLoginList = request.getParameter("inquirylist");
 		
 		int page = 1;
 		  
@@ -65,18 +57,18 @@ public class FaqAction implements Action {
 		 
 		  FaqDAO faqDAO = FaqDAO.getInstance();
 			
-		  int count = faqDAO.getAllCount("faq", "subject", key);
+		  int count = faqDAO.getAllCount2("faq", "subject", key, memberLoginList);
 			 
 		  System.out.println("count : " + count);
 			 
 		  paging.setTotalCount(count);
-			 
-		  ArrayList<FaqVO> faqList = faqDAO.getList(paging,key);
-			
-		  request.setAttribute("faqList", faqList);
-		  request.setAttribute("paging", paging);
-			
-		RequestDispatcher rd = request.getRequestDispatcher("faqForm.jsp");
+		
+		ArrayList<FaqVO> memberCustomerList = faqDAO.getMemberCustomerLogin(memberLoginList, paging, key);
+		
+		request.setAttribute("memberCustomer", memberCustomerList);
+		request.setAttribute("paging", paging);
+		
+		RequestDispatcher rd = request.getRequestDispatcher("faqMemberCustomerList.jsp");
 		rd.forward(request, response);
 	}
 

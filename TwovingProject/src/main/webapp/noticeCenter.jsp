@@ -16,9 +16,9 @@
 		<div class="notice_table">
 			<table>
 					<tr class="trow">
-						<th style="margin-left: 55px;">번호</th>
-						<th style="margin-left: 80px;">제목</th>
-						<th style="margin-left: 40px;">등록일</th>
+						<th style="">번호</th>
+						<th style="">제목</th>
+						<th style="">등록일</th>
 						<th>조회수</th>
 					</tr>
 					<c:forEach items="${noticeList}" var="notice">

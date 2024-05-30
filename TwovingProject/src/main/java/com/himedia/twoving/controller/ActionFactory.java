@@ -3,10 +3,16 @@ package com.himedia.twoving.controller;
 import com.himedia.twoving.action.Action;
 import com.himedia.twoving.controller.action.help.CustomerInquiryAction;
 import com.himedia.twoving.controller.action.help.FaqAction;
+import com.himedia.twoving.controller.action.help.LoadingErrorAction;
+import com.himedia.twoving.controller.action.help.MemberCustomerLoginAction;
 import com.himedia.twoving.controller.action.help.NextTimeDefuseAction;
+import com.himedia.twoving.controller.action.help.NonpayAction;
 import com.himedia.twoving.controller.action.help.NoticeAction;
 import com.himedia.twoving.controller.action.help.NoticeDetail;
+import com.himedia.twoving.controller.action.help.PassTicketAction;
 import com.himedia.twoving.controller.action.help.QnaListAction;
+import com.himedia.twoving.controller.action.help.ServicePolicyAction;
+import com.himedia.twoving.controller.action.help.ServiceRunAction;
 
 public class ActionFactory {
 	private ActionFactory() {
@@ -26,6 +32,14 @@ public class ActionFactory {
 		
 		// faq
 		else if(command.equals("faq")) ac = new FaqAction();
+		else if(command.equals("memberCustomerLogin")) ac = new MemberCustomerLoginAction();
+		else if(command.equals("passTicket")) ac = new PassTicketAction();
+		else if(command.equals("loadingError")) ac = new LoadingErrorAction();
+		else if(command.equals("nonpay")) ac = new NonpayAction();
+		else if(command.equals("servicerun")) ac = new ServiceRunAction();
+		
+		// servicepolicy
+		else if(command.equals("servicepolicy")) ac = new ServicePolicyAction();
 		
 		// customerinquiry
 		else if(command.equals("customerinquiry")) ac = new CustomerInquiryAction();
