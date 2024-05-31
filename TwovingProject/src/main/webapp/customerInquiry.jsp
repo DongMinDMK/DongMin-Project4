@@ -12,26 +12,29 @@
 			<%@ include file="cosmenu_wrapper.jsp" %>
 		</div>
 		
-		<!-- <div class="topic_menu">
-			<span class="question">자주 묻는 질문</span>
-			<ul>
-				<li></li> | <li></li> | <li></li>
-			</ul>
-		</div> -->
-		<p> *는 필수입력사항입니다. </p>
+		 <div class="search">
+			<div class="qes2" style="padding : 5px;">
+				<span style="font-weight:bold; color:white;">자주 묻는 질문</span>&nbsp;&nbsp;
+				<a href="twoving.do?command=memberCustomerLogin&inquirylist=회원/로그인"><span>로그인이 안돼요</span></a> &nbsp;&nbsp; |  &nbsp;&nbsp;
+				<a href="twoving.do?command=passTicket&inquirylist=이용권/결제"><span>이용권이 있는 계정이 무엇인지 찾고 싶어요</span></a> &nbsp;&nbsp; |  &nbsp;&nbsp;
+				<a href="twoving.do?command=passTicket&inquirylist=이용권/결제"><span>정기결제수단 변경은 어떻게 하나요?</span></a>
+			</div>
+		</div>
+		
+		 <p style="border-bottom: 1px solid gray; padding: 20px; color:gray; font-weight: bold; font-size:80%;"> *는 필수입력사항입니다. </p>
 		<div class="form-layout">
-			<div class="form-box1">
-				<div class="form-box1-presemi">
+			<!-- <div class="form-box1"> -->
+				<!-- <div class="form-box1-presemi"> -->
 					<div class="form-box-semi1">
-						<h4>기본정보</h4>
+						<label style="padding: 20px; font-weight: bold; font-size:115%;">기본정보</label>
 					</div>
-					<form action="twoving.do?command=qnaList" method="post" name="inquiryForm" style="border:1px solid white;" class="inquiryClassForm">
+					<form action="twoving.do?command=qnaList" method="post" name="inquiryForm" style="" class="inquiryClassForm">
 					<div class="field">
 						<span>이름*</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<input type="text" value="김동민" name="name" readonly>
+						<input type="text" value="김동민" name="name" style="color:white; font-weight:bold;" readonly>
 					</div>
 					<div class="field">
-						<span style="color:white;">이메일*</span>&nbsp;&nbsp;&nbsp;
+						<span>이메일*</span>&nbsp;&nbsp;&nbsp;
 						<input type="text" width="100" name="emailid" class="detailInput" id="email-datail1">&nbsp;
 						<span style="color:white;">@</span>&nbsp;
 						<input type="text" width="100" name="emailid2" class="detailInput"  id="email-datail2">&nbsp;&nbsp;&nbsp;
@@ -44,7 +47,7 @@
 						</select>
 					</div>
 					<div class="field">
-					<span style="color:white;">연락처*</span>&nbsp;&nbsp;&nbsp;
+					<span>연락처*</span>&nbsp;&nbsp;&nbsp;
 					<select name="phone">
 						<option selected>010</option>
 						<option>011</option>
@@ -70,10 +73,10 @@
 						<input type="radio" name="radio1" class="rd" value="환불/해지 신청"><label>환불/해지 신청</label>
 						<input type="radio" name="radio1" class="rd" value="이용권 결제"><label>이용권 결제</label>
 						<input type="radio" name="radio1" class="rd" value="장애 신고"><label>장애신고</label>
-						<input type="radio" name="radio1" class="rd" value="콘텐츠/채널"><label>콘텐츠/채널<br></label>
+						<input type="radio" name="radio1" class="rd" value="콘텐츠/채널"><label>콘텐츠/채널</label>
 						<input type="radio" name="radio1" class="rd" value="이벤트"><label>이벤트</label>
 						<input type="radio" name="radio1" class="rd" value="서비스 제한"><label>서비스 제한</label>
-						<input type="radio" name="radio1" value="기타"><label>기타</label>
+						<input type="radio" name="radio1" class="rd" value="기타"><label>기타</label>
 				</div>
 				<div class="field">
 						<span>디바이스</span>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -203,9 +206,9 @@
 					
 				<div class="field">
 						<span>이용 환경</span>&nbsp;&nbsp;&nbsp;&nbsp;
-						<input type="radio" name="runenvironment" value="PC"><span>PC</span>&nbsp;&nbsp;&nbsp;
-						<input type="radio" name="runenvironment" value="와이파이"><span>와이파이</span>&nbsp;&nbsp;&nbsp;
-						<input type="radio" name="runenvironment" value="통신사(3G/4G/5G)"><span>통신사(3G/4G/5G)</span>&nbsp;&nbsp;&nbsp;
+						<input type="radio" class="enviro" name="runenvironment" value="PC"><span>PC</span>&nbsp;&nbsp;&nbsp;
+						<input type="radio" class="enviro" name="runenvironment" value="와이파이"><span>와이파이</span>&nbsp;&nbsp;&nbsp;
+						<input type="radio" class="enviro" name="runenvironment" value="통신사(3G/4G/5G)"><span>통신사(3G/4G/5G)</span>&nbsp;&nbsp;&nbsp;
 				</div>
 				
 				<div class="field">
@@ -223,14 +226,10 @@
 					<textarea rows="10" cols="100" placeholder="문의 내용을 입력해주세요." name="inquirycontent"></textarea>
 				</div>	
 				<p>※ 빠른 검토를 위해 영어 2000자, 한글 1000자 내외로 입력하세요.</p>
-				<input type="submit" value="문의 남기기" onClick="return inquiryCheck();"  width="20" style="padding:10px;">
+				<input type="submit" value="문의 남기기" class="buttons" onClick="return inquiryCheck();">	
 			</form>
-			</div>
 		</div>
-	</div>
-	
 	</article>
-	</div>
 </section>
 
 

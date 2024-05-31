@@ -105,4 +105,37 @@ public class NoticeDAO {
 			DBman.close(con, pstmt, rs);
 		}
 	}
+
+	public NoticeVO getOneList(int nseq) {
+		NoticeVO noticeVO = null;
+		
+		con = DBman.getConnection();
+		
+		String sql = "select* from notice where nseq=?";
+		
+		try {
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setInt(1, nseq);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				noticeVO = new NoticeVO();
+				noticeVO.setNseq(rs.getInt("nseq"));
+				noticeVO.setUserid(rs.getString("userid"));
+				noticeVO.setTitle(rs.getString("title"));
+				noticeVO.setContent(rs.getString("content"));
+				noticeVO.setIndate(rs.getTimestamp("indate"));
+				noticeVO.setReadcount(rs.getInt("readcount"));
+				noticeVO.setNoticeyn(rs.getString("noticeyn"));
+			}
+		} catch (SQLException e) {
+		
+			e.printStackTrace();
+		} finally {
+			DBman.close(con, pstmt, rs);
+		}
+		return noticeVO;
+	}
 }

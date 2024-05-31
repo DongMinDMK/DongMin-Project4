@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import com.himedia.twoving.action.Action;
 import com.himedia.twoving.dao.NoticeDAO;
+import com.himedia.twoving.vo.NoticeVO;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -20,7 +21,9 @@ public class NoticeDetail implements Action {
 		
 		noticeDAO.updateCount(nseq);
 		
-		// request.setAttribute("noticeList",  noticeList);
+		NoticeVO noticeVO = noticeDAO.getOneList(nseq);
+		
+		request.setAttribute("noticeVO",  noticeVO);
 		
 		RequestDispatcher rd = request.getRequestDispatcher("noticeDetail.jsp");
 		rd.forward(request, response);

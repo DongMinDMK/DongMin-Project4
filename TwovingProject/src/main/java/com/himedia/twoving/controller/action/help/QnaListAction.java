@@ -55,6 +55,8 @@ public class QnaListAction implements Action {
 		
 		String inquirytitle = request.getParameter("inquirytitle");
 		
+		System.out.println("inquirytitle : " + inquirytitle);
+		
 		String inquirycontent = request.getParameter("inquirycontent");
 		
 		CustomerInquiryVO civo = new CustomerInquiryVO();

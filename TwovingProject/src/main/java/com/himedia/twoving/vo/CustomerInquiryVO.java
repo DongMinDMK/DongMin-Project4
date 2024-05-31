@@ -16,9 +16,14 @@ public class CustomerInquiryVO {
 	private String runcontent; //이용콘텐츠
 	private String inquirytitle; //문의제목
 	private String inquirycontent; //문의내용
+	private String reply; // 댓글
 	
-	
-	
+	public String getReply() {
+		return reply;
+	}
+	public void setReply(String reply) {
+		this.reply = reply;
+	}
 	public String getRunenvironment() {
 		return runenvironment;
 	}

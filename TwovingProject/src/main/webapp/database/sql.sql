@@ -45,6 +45,7 @@ CREATE TABLE `twoving`.`customerinquiry` (
   `runcontent` VARCHAR(50) NULL,
   `inquirytitle` VARCHAR(50) NOT NULL,
   `inquirycontent` VARCHAR(1000) NOT NULL,
+  `reply` VARCHAR(1000) NULL,
   PRIMARY KEY (`ciseq`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4

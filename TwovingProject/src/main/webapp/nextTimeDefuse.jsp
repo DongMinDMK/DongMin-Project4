@@ -21,7 +21,7 @@
 				</p>
 			</div>
 			<div class="defuse-bottom">
-				<input type="button" value="정기결제 해지하러 가기" style="background-color:white; font-size: 120%; font-weight: bold;" size="150">
+				<input type="button" value="정기결제 해지하러 가기" style="background-color:white; font-size: 120%; font-weight: bold;" size="150" onClick="">
 			</div>
 		</div>
 		

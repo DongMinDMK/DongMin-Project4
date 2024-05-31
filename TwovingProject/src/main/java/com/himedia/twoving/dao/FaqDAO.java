@@ -131,17 +131,20 @@ public class FaqDAO {
 		return list;
 	}
 
-	public ArrayList<FaqVO> getLoadingError(String loadingErrorList) {
+	public ArrayList<FaqVO> getLoadingError(String loadingErrorList, Paging paging, String key) {
 		ArrayList<FaqVO> list = new ArrayList<FaqVO>();
 		
 		con = DBman.getConnection();
 		
-		String sql = "select* from faq where inquirylist=?";
+		String sql = "select* from faq where inquirylist=?  and subject like concat('%',?,'%') limit ? offset ?";
 		
 		try {
 			pstmt = con.prepareStatement(sql);
 			
 			pstmt.setString(1, loadingErrorList);
+			pstmt.setString(2, key);
+			pstmt.setInt(3, paging.getDisplayRow());
+			pstmt.setInt(4, paging.getStartNum()-1);
 			
 			rs = pstmt.executeQuery();
 			
@@ -164,17 +167,20 @@ public class FaqDAO {
 		return list;
 	}
 
-	public ArrayList<FaqVO> getNonpay(String nonpay) {
+	public ArrayList<FaqVO> getNonpay(String nonpay, Paging paging, String key) {
 		ArrayList<FaqVO> list = new ArrayList<FaqVO>();
 		
 		con = DBman.getConnection();
 		
-		String sql = "select* from faq where inquirylist=?";
+		String sql = "select* from faq where inquirylist=? and subject like concat('%',?,'%') limit ? offset ?";
 		
 		try {
 			pstmt = con.prepareStatement(sql);
 			
 			pstmt.setString(1, nonpay);
+			pstmt.setString(2, key);
+			pstmt.setInt(3, paging.getDisplayRow());
+			pstmt.setInt(4, paging.getStartNum()-1);
 			
 			rs = pstmt.executeQuery();
 			
@@ -197,18 +203,21 @@ public class FaqDAO {
 		return list;
 	}
 
-	public ArrayList<FaqVO> getServiceRun(String servicerun) {
+	public ArrayList<FaqVO> getServiceRun(String servicerun, Paging paging, String key) {
 		
 		ArrayList<FaqVO> list = new ArrayList<FaqVO>();
 		
 		con = DBman.getConnection();
 		
-		String sql = "select* from faq where inquirylist=?";
+		String sql = "select* from faq where inquirylist=? and subject like concat('%',?,'%') limit ? offset ?";
 		
 		try {
 			pstmt = con.prepareStatement(sql);
 			
 			pstmt.setString(1, servicerun);
+			pstmt.setString(2, key);
+			pstmt.setInt(3, paging.getDisplayRow());
+			pstmt.setInt(4, paging.getStartNum()-1);
 			
 			rs = pstmt.executeQuery();
 			
@@ -296,6 +305,87 @@ public class FaqDAO {
 			
 			pstmt.setString(1, key);
 			pstmt.setString(2, passTicket);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				count = rs.getInt("cnt");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBman.close(con, pstmt, rs);
+		}
+		
+		return count;
+	}
+
+	public int getAllCount4(String tablename, String fieldName, String key, String loadingErrorList) {
+		int count = 0;
+		
+		con = DBman.getConnection();
+		
+		String sql = "select count(*) as cnt  from " + tablename + " where " + fieldName + " like concat('%',?,'%') and inquirylist=?";
+		
+		try {
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setString(1, key);
+			pstmt.setString(2, loadingErrorList);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				count = rs.getInt("cnt");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBman.close(con, pstmt, rs);
+		}
+		
+		return count;
+	}
+
+	public int getAllCount5(String tablename, String fieldName, String key, String nonpay) {
+		int count = 0;
+		
+		con = DBman.getConnection();
+		
+		String sql = "select count(*) as cnt  from " + tablename + " where " + fieldName + " like concat('%',?,'%') and inquirylist=?";
+		
+		try {
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setString(1, key);
+			pstmt.setString(2, nonpay);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				count = rs.getInt("cnt");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBman.close(con, pstmt, rs);
+		}
+		
+		return count;
+	}
+
+	public int getAllCount6(String tablename, String fieldName, String key, String servicerun) {
+		int count = 0;
+		
+		con = DBman.getConnection();
+		
+		String sql = "select count(*) as cnt  from " + tablename + " where " + fieldName + " like concat('%',?,'%') and inquirylist=?";
+		
+		try {
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setString(1, key);
+			pstmt.setString(2, servicerun);
 			
 			rs = pstmt.executeQuery();
 			

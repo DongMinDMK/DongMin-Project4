@@ -26,7 +26,7 @@ public class CustomerInquiryDAO {
 	public void insertCustomerInquiry(CustomerInquiryVO civo) {
 		con = DBman.getConnection();
 		
-		String sql = "insert into customerinquiry(name, email, phone, inquiryList, devicephone, devicemodelname, runenvironment, runplace, runtime1, runtime2, runcontent, inquirytitle, inquirycontent)  values(?,?,?,?,?,?,?,?,?,?,?,?,?);";
+		String sql = "insert into customerinquiry(name, email, phone, inquiryList, devicephone, devicemodelname, runenvironment, runplace, runtime1, runtime2, runcontent, inquirytitle, inquirycontent, reply)  values(?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
 		
 		try {
 			pstmt = con.prepareStatement(sql);
@@ -44,6 +44,7 @@ public class CustomerInquiryDAO {
 			pstmt.setString(11, civo.getRuncontent());
 			pstmt.setString(12, civo.getInquirytitle());
 			pstmt.setString(13, civo.getInquirycontent());
+			pstmt.setString(14, civo.getReply());
 			
 			pstmt.executeUpdate();
 			
