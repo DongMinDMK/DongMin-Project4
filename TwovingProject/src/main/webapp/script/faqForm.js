@@ -1,3 +1,31 @@
+/*
+function searchAndRedirect(){
+	var inputValue = document.getElementById('searchInput').value.toLowerCase();
+	
+	System.out.println("inputValue : " + inputValue);
+	
+	var links = {
+            "faq": "twoving.do?command=faq",
+            "회원/로그인": "twoving.do?command=memberCustomerLogin&inquirylist=회원/로그인",
+            "이용권/결제": "twoving.do?command=passTicket&inquirylist=이용권/결제",
+            "재생/오류": "twoving.do?command=loadingError&inquirylist=재생/오류",
+            "해지/환불": "twoving.do?command=nonpay&inquirylist=해지/환불",
+            "서비스 이용": "twoving.do?command=servicerun&inquirylist=서비스 이용"
+    };
+    
+    for(var key in links){
+		if(inputValue.includes(links[key].toLowerCase())){
+			window.location.href=key;
+			return true;
+		}
+	}
+	
+	//만약 일치하는 항목이 없으면 알럿창
+	window.alert("검색하신 결과를 찾을 수 없습니다.");
+	return false;
+}
+*/
+
 /*function go_search(){
 	
 document.getElementById("link").addEventListener("click", function(){

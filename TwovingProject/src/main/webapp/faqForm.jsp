@@ -15,11 +15,12 @@
 		<br>
 		
 		<div class="search">
-			<%-- <div class="qes1">
-				<input type="text"  name="key" value="${key}" placeholder="검색어를 입력해주세요">
-				<a href="twoving.do?command=memberCustomerLogin&inquirylist=회원/로그인" id="link"><img src="images/search.png" width="60"></a>
+			<!-- 
+			<div class="qes1">
+				<input type="text" id="searchInput" name="key" value="${key}" placeholder="검색어를 입력해주세요">
+				<a href="javascript:void(0);" id="link"><img src="images/search.png" width="60" onClick="return searchAndRedirect();"></a> 
 			</div>
-			<br><br> --%>
+			-->
 			<div class="qes2" style="">
 				<span style="font-weight:bold; color:white;">자주 묻는 질문</span>&nbsp;&nbsp;
 				<a href="twoving.do?command=memberCustomerLogin&inquirylist=회원/로그인"><span>로그인이 안돼요</span></a> &nbsp;&nbsp; |  &nbsp;&nbsp;
@@ -44,10 +45,10 @@
 					<td class="fnq-tcol" style="color:gray; font-weight:bold; padding: 10px;">${faq.subject}</td>
 					<td class="fnq-tcol"><img src="images/down4.png" width="35" class="toggle-btn" style="border-radius:50%;"></td>
 				</tr>
-				 <tr class="faq-content" style="display:none;">
-				 	<td class="fnq-tcol" style="color:white; font-weight:bold; padding: 10px; font-size: 90%;">${faq.subject}</td>
-            		<td colspan="3" style="color:gray; margin:0 auto; font-weight: bold;">${faq.content}</td>
-       			 </tr>
+				<tr class="faq-content" style="display:none;">
+				 	<td class="faq-tcol" style="display:block; text-align:center;">${faq.subject}</td>
+            		<td class="faq-content-tcol" colspan="3" style="display:block; text-align:center;">${faq.content}</td>
+       			</tr>
 			</c:forEach>
 		</table>
 		

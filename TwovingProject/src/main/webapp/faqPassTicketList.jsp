@@ -38,13 +38,17 @@
 		</div>
 		
 		<table style="display: flex; flex-direction:column;">
-			<c:forEach items="${passTicket}" var="pt">
-				<tr class="fnq-trow">
+			<c:forEach items="${passTicket}" var="pt" varStatus="loop">
+				<tr class="fnq-trow" onClick="slideToggleFuc(${loop.index});" id="toggleClass" style="cursor:pointer;">
 					<td class="fnq-tcol" style="color:gray; font-weight:bold; padding: 10px;">${pt.inquirylist}</td>
 					<td class="fnq-tcol" style="color:gray; font-weight:bold; padding: 10px;">${pt.subject}</td>
 					<td class="fnq-tcol"><img src="images/down4.png" width="35" style="border-radius:50%;"></td>
 					<%-- <td class="fnq-tcol">${faq.content}</td> --%>
 				</tr>
+				<tr class="faq-content" style="display:none;">
+				 	<td class="faq-tcol" style="display:block; text-align:center;">${pt.subject}</td>
+            		<td class="faq-content-tcol" colspan="3" style="display:block; text-align:center;">${pt.content}</td>
+       			</tr>
 			</c:forEach>
 		</table>
 		

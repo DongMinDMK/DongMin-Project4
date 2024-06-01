@@ -201,7 +201,7 @@
 				</div>
 				<div class="field">
 						<span>이용 콘텐츠</span>&nbsp;&nbsp;&nbsp;&nbsp;
-						<input type="text" name="runcontent" placeholder="이용하실 콘텐츠를 입력해주세요..."  size=50>
+						<input type="text" name="runcontent" placeholder="이용하실 콘텐츠를 입력해주세요..."  style="width: 400px;">
 				</div>
 					
 				<div class="field">
@@ -213,7 +213,7 @@
 				
 				<div class="field">
 						<span>이용장소</span>&nbsp;&nbsp;&nbsp;
-						<input type="text" name="runplace" placeholder="이용장소를 선택해주세요(집,버스 등)" size=50>
+						<input type="text" name="runplace" placeholder="이용장소를 선택해주세요(집,버스 등)" style="width: 300px;">
 				</div>
 					
 				<div class="field">
@@ -221,11 +221,29 @@
 					<input type="text" name="inquirytitle" placeholder="문의 제목을 입력해주세요." size=50>
 				</div>	
 				
-				<div class="field">
+				<div class="field" style="border-bottom: 1px solid black;">
 					<span>문의 내용*</span>&nbsp;&nbsp;&nbsp;&nbsp;
 					<textarea rows="10" cols="100" placeholder="문의 내용을 입력해주세요." name="inquirycontent"></textarea>
 				</div>	
-				<p>※ 빠른 검토를 위해 영어 2000자, 한글 1000자 내외로 입력하세요.</p>
+				<p style="border-bottom: 1px solid gray; padding: 15px; color:gray;">※ 빠른 검토를 위해 영어 2000자, 한글 1000자 내외로 입력하세요.</p>
+				
+				
+				<div class="bott" style="display:flex; flex-direction: column;">
+					<span>개인정보 수집 및 동의</span>
+					<p>※ 동의하지 않을 경우 고객 문의 답변에 제한이 있을 수 있습니다.</p>
+					<div class="bott-box" style="background-color:gray; padding: 30px;">
+						<p>
+							개인 정보 수집 및 이용목적<br>
+							1. 개인 정보 수집항목 : 성명, 전화번호, 이메일, 아이디<br>
+							2. 개인 정보 이용목적 : 문의 접수, 고객 불편 사항 확인 및 처리 결과 회신<br>
+							3. 개인 정보 이용기간 : 접수 후, 3년간 보관 후 파기<br>
+						</p>	
+					</div>
+					<div class="bott-img-check-box" style="display:flex; padding: 8px; cursor:pointer;">
+						<img src="images/checkblack.png" class="bott-check-image" style="width:30px; border-radius:50%;">&nbsp;&nbsp;<span>동의합니다.</span>
+					</div>
+				</div>
+				
 				<input type="submit" value="문의 남기기" class="buttons" onClick="return inquiryCheck();">	
 			</form>
 		</div>

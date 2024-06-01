@@ -401,10 +401,24 @@ label{
 }
 
 .faq-content{
-	padding: 50px;
-	display: flex;
+	padding: 30px;
 	justify-content: center;
 	align-items: center;
+}
+
+.faq-tcol, .faq-content-tcol{
+	padding: 10px;
+	font-weight: bold;
+}
+
+.faq-tcol{
+	color:white;
+	font-size: 110%;
+}
+
+.faq-content-tcol{
+	color: gray;
+	margin: 0 auto;
 }
 
 @media(min-width: 768px) and (max-width: 1199px){
