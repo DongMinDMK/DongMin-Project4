@@ -532,7 +532,7 @@ select* from notice;
 
 select* from customerinquiry;
 
-insert into customerinquiry(name, email, phone, inquiryList, devicephone, devicemodelname, runtime1, runtime2, runcontent, inquirytitle, inquirycontent)  values('hong1', 'syh6917@naver.com', '010-1111-1111', '회원/로그인', 'PC', '윈도우11', '03:00', '07:00', '드라마', '안녕하세요', '드라마 관련 질문드립니다.');
+insert into customerinquiry(name, email, phone, inquiryList, devicephone, devicemodelname, runenvironment, runtime1, runtime2, runcontent, inquirytitle, inquirycontent)  values('hong1', 'syh6917@naver.com', '010-1111-1111', '회원/로그인', 'PC', '윈도우11', 'PC', '03:00', '07:00', '드라마', '안녕하세요', '드라마 관련 질문드립니다.');
 
 
 

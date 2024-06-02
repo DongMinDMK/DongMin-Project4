@@ -206,9 +206,9 @@
 					
 				<div class="field">
 						<span>이용 환경</span>&nbsp;&nbsp;&nbsp;&nbsp;
-						<input type="radio" class="enviro" name="runenvironment" value="PC"><span>PC</span>&nbsp;&nbsp;&nbsp;
-						<input type="radio" class="enviro" name="runenvironment" value="와이파이"><span>와이파이</span>&nbsp;&nbsp;&nbsp;
-						<input type="radio" class="enviro" name="runenvironment" value="통신사(3G/4G/5G)"><span>통신사(3G/4G/5G)</span>&nbsp;&nbsp;&nbsp;
+						<input type="radio" class="enviro" name="runenvironment" value="PC"><label>PC</label>&nbsp;&nbsp;&nbsp;
+						<input type="radio" class="enviro" name="runenvironment" value="와이파이"><label>와이파이</label>&nbsp;&nbsp;&nbsp;
+						<input type="radio" class="enviro" name="runenvironment" value="통신사(3G/4G/5G)"><label>통신사(3G/4G/5G)</label>&nbsp;&nbsp;&nbsp;
 				</div>
 				
 				<div class="field">
@@ -240,11 +240,11 @@
 						</p>	
 					</div>
 					<div class="bott-img-check-box" style="display:flex; padding: 8px; cursor:pointer;">
-						<img src="images/checkblack.png" class="bott-check-image" style="width:30px; border-radius:50%;">&nbsp;&nbsp;<span>동의합니다.</span>
+						<img src="images/checkblack.png" class="bott-check-image" id="checkBlack" style="width:30px; border-radius:50%;">&nbsp;&nbsp;<span>동의합니다.</span>
+						<img src="images/checkcolor.jpeg" class="bott-check-image" id="checkColor" style="display:none; width:30px; border-radius:50%;">&nbsp;&nbsp;<span style="display:none;">동의합니다.</span>
 					</div>
 				</div>
-				
-				<input type="submit" value="문의 남기기" class="buttons" onClick="return inquiryCheck();">	
+				<input type="submit" value="문의 남기기" class="buttons" id="submitButton" onClick="return inquiryCheck();">	
 			</form>
 		</div>
 	</article>

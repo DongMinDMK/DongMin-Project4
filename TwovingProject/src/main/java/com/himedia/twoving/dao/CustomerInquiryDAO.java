@@ -26,7 +26,7 @@ public class CustomerInquiryDAO {
 	public void insertCustomerInquiry(CustomerInquiryVO civo) {
 		con = DBman.getConnection();
 		
-		String sql = "insert into customerinquiry(name, email, phone, inquiryList, devicephone, devicemodelname, runenvironment, runplace, runtime1, runtime2, runcontent, inquirytitle, inquirycontent, reply)  values(?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
+		String sql = "insert into customerinquiry(name, email, phone, inquiryList, devicephone, devicemodelname, runplace, runtime1, runtime2, runcontent, inquirytitle, inquirycontent, reply)  values(?,?,?,?,?,?,?,?,?,?,?,?,?);";
 		
 		try {
 			pstmt = con.prepareStatement(sql);
@@ -37,14 +37,13 @@ public class CustomerInquiryDAO {
 			pstmt.setString(4, civo.getInquiryList());
 			pstmt.setString(5, civo.getDevicephone());
 			pstmt.setString(6, civo.getDevicemodelname());
-			pstmt.setString(7, civo.getRunenvironment());
-			pstmt.setString(8, civo.getRunplace());
-			pstmt.setString(9, civo.getRuntime1());
-			pstmt.setString(10, civo.getRuntime2());
-			pstmt.setString(11, civo.getRuncontent());
-			pstmt.setString(12, civo.getInquirytitle());
-			pstmt.setString(13, civo.getInquirycontent());
-			pstmt.setString(14, civo.getReply());
+			pstmt.setString(7, civo.getRunplace());
+			pstmt.setString(8, civo.getRuntime1());
+			pstmt.setString(9, civo.getRuntime2());
+			pstmt.setString(10, civo.getRuncontent());
+			pstmt.setString(11, civo.getInquirytitle());
+			pstmt.setString(12, civo.getInquirycontent());
+			pstmt.setString(13, civo.getReply());
 			
 			pstmt.executeUpdate();
 			
