@@ -63,7 +63,7 @@
 					&nbsp;&nbsp;&nbsp;
 					<span>-</span>
 					&nbsp;&nbsp;&nbsp;
-					<input type="text" name="phone2" width="150">
+					<input type="text" name="phone2" width="150" style="background-color:gray;">
 				</div>
 				<br>
 				<div class="field">

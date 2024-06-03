@@ -2,6 +2,7 @@ drop table member;
 drop table notice;
 drop table customerinquiry;
 drop table faq;
+drop table payment;
 
 CREATE TABLE `twoving`.`member` (
   `userid` VARCHAR(45) NOT NULL,
@@ -63,7 +64,46 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
+
+CREATE TABLE `twoving`.`payment` (
+  `pmseq` INT NOT NULL AUTO_INCREMENT,
+  `subscribeyn` CHAR(1) NOT NULL DEFAULT 'N',
+  `productname` VARCHAR(50) NOT NULL,
+  `paymentprice` VARCHAR(50) NOT NULL,
+  `paymentmeans` VARCHAR(50) NOT NULL,
+  `paymentday` DATETIME NOT NULL DEFAULT now(),
+  `runperiod1` DATETIME NOT NULL DEFAULT now(),
+  `runperiod2` DATETIME NOT NULL DEFAULT now(),
+  PRIMARY KEY (`pmseq`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+insert into payment(productname, paymentprice, paymentmeans) values( '광고형 스탠다드', '5,500원','Toss Pay');
+insert into payment(productname, paymentprice, paymentmeans) values( '스탠다드', '13,900원','Google Play');
+insert into payment(productname, paymentprice, paymentmeans) values( '스탠다드', '13,900원','신용카드');
+insert into payment(productname, paymentprice, paymentmeans) values( '프리미엄', '17,000원','신용카드');
+insert into payment(productname, paymentprice, paymentmeans) values( '광고형 스탠다드', '5,500원','네이버플러스 멤버십');
+insert into payment(subscribeyn, productname, paymentprice, paymentmeans) values('Y','광고형 스탠다드', '5,500원','Toss Pay');
+insert into payment(productname, paymentprice, paymentmeans) values( '광고형 스탠다드', '5,500원','Toss Pay');
+insert into payment(productname, paymentprice, paymentmeans) values( '스탠다드', '13,900원','Google Play');
+insert into payment(productname, paymentprice, paymentmeans) values( '스탠다드', '13,900원','신용카드');
+insert into payment(productname, paymentprice, paymentmeans) values( '프리미엄', '17,000원','신용카드');
+insert into payment(productname, paymentprice, paymentmeans) values( '광고형 스탠다드', '5,500원','네이버플러스 멤버십');insert into payment(productname, paymentprice, paymentmeans) values( '광고형 스탠다드', '5,500원','Toss Pay');
+insert into payment(productname, paymentprice, paymentmeans) values( '스탠다드', '13,900원','Google Play');
+insert into payment(productname, paymentprice, paymentmeans) values( '스탠다드', '13,900원','신용카드');
+insert into payment(productname, paymentprice, paymentmeans) values( '프리미엄', '17,000원','신용카드');
+insert into payment(productname, paymentprice, paymentmeans) values( '광고형 스탠다드', '5,500원','네이버플러스 멤버십');insert into payment(productname, paymentprice, paymentmeans) values( '광고형 스탠다드', '5,500원','Toss Pay');
+insert into payment(productname, paymentprice, paymentmeans) values( '스탠다드', '13,900원','Google Play');
+insert into payment(productname, paymentprice, paymentmeans) values( '스탠다드', '13,900원','신용카드');
+insert into payment(productname, paymentprice, paymentmeans) values( '프리미엄', '17,000원','신용카드');
+insert into payment(productname, paymentprice, paymentmeans) values( '광고형 스탠다드', '5,500원','네이버플러스 멤버십');
+
+
+
 SELECT* FROM notice;
+
+select* from payment;
 
 insert into faq(inquirylist, subject, content) values('전체', '	
 [기타] 티빙 고객센터 카카오 챗봇 및 실시간 채팅 상담 이용하기', '새롭게 바뀐 티빙 카카오 챗봇에서 궁금한 점을 빠르게 해결해 보세요. 

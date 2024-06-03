@@ -5,14 +5,17 @@ import com.himedia.twoving.controller.action.help.CustomerInquiryAction;
 import com.himedia.twoving.controller.action.help.FaqAction;
 import com.himedia.twoving.controller.action.help.LoadingErrorAction;
 import com.himedia.twoving.controller.action.help.MemberCustomerLoginAction;
+import com.himedia.twoving.controller.action.help.MyMembershipAction;
 import com.himedia.twoving.controller.action.help.NextTimeDefuseAction;
 import com.himedia.twoving.controller.action.help.NonpayAction;
 import com.himedia.twoving.controller.action.help.NoticeAction;
 import com.himedia.twoving.controller.action.help.NoticeDetail;
 import com.himedia.twoving.controller.action.help.PassTicketAction;
+import com.himedia.twoving.controller.action.help.PassTicketListAction;
 import com.himedia.twoving.controller.action.help.QnaListAction;
 import com.himedia.twoving.controller.action.help.ServicePolicyAction;
 import com.himedia.twoving.controller.action.help.ServiceRunAction;
+import com.himedia.twoving.controller.action.help.UpdateDefuseCheckAction;
 
 public class ActionFactory {
 	private ActionFactory() {
@@ -45,6 +48,12 @@ public class ActionFactory {
 		else if(command.equals("customerinquiry")) ac = new CustomerInquiryAction();
 		else if(command.equals("qnaList")) ac = new QnaListAction();
 		else if(command.equals("nexttimedefuse")) ac = new NextTimeDefuseAction();
+		
+		
+		//mymembership
+		else if(command.equals("mymembership")) ac = new MyMembershipAction();
+		else if(command.equals("passTicket")) ac = new PassTicketAction();
+		else if(command.equals("updateDefuseCheck")) ac = new UpdateDefuseCheckAction();
 	
 		return ac;
 	}
