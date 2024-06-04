@@ -1,0 +1,55 @@
+@charset "EUC-KR";
+
+.logo {
+	margin-top: 20px;
+	margin-left: 20px;
+	color: red;
+	font-size: 40px;
+	font-weight: bold;
+	background: black;
+	background: none;
+	border: none;
+}
+body {
+	color: white;
+	background-color: black;
+	font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Roboto",
+		Segoe UI, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue,
+		sans-serif ";	
+}
+
+h1{
+	text-align: center;
+	margin-top: 120px;
+}
+
+.all{
+	display:flex;
+	justify-content: center;
+align-items: center;
+	flex-direction:column;
+
+}
+
+.text{
+	font-size: 120%;
+	
+}
+.box1{
+	width: 600px;
+	height: 85px;
+	color: white;
+	background-color: #353535;
+	border-radius: 5px;
+	border: 1px solid gray;
+}
+.box2{
+		width: 600px;
+		height: 85px;
+		border-radius: 5px;
+		background-color: rgb(158, 158, 158);
+		font-size: 130%;
+		font-weight: bold;
+		color: gray;
+		
+}

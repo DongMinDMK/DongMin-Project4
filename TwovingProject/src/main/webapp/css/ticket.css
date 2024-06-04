@@ -1,0 +1,123 @@
+@charset "EUC-KR";
+
+html,
+body {
+  height: 100%;
+  background-color: #000000;
+  color: #fafafa;
+    font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Roboto",
+  Segoe UI, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif;
+}
+.se{
+	color:white;
+		display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 100px;
+	font-size: 200%;
+	font-weight: bold;
+}
+.a1{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	
+}
+
+
+
+.box {
+	display: flex;
+	flex-direction : row;
+	justify-content: space-between;
+	align-items: center; /* Center vertically */
+	color: gray; /* Make text visible on gray background */
+	font-size: 120%;
+	width:500px;
+	height: 100px;
+	background: black;
+	margin-top: 50px;
+	text-align: center;
+	
+	
+}
+
+.box1, .box2, .box3 {
+    flex: 1;
+    background-color: #353535;
+    width: 100px;
+    height: 100px;
+    color: gray;
+    border: 1px solid gray;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+	text-align: center;
+	align-items: center;
+     transition: background-color 0.3s;
+}
+.box1:hover, .box2:hover, .box3:hover {
+    background-color: red; /* 마우스를 가져다 대면 배경색을 빨강색으로 변경 */
+}
+.text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 120%;
+    width: 100%;
+    background: black;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+ul {
+    text-align: center; /* li 요소를 가운데 정렬 */
+}
+li {
+    background: black;
+    width: 100px;
+    height: 130px;
+    list-style: none;
+    font-size: 80%;
+    margin: 10px;
+    display: inline-block; /* Display li elements inline */
+    display: flex;
+	flex-direction : row;
+	justify-content: space-between;
+  
+}
+
+.btn {
+    background-color: red;
+    color: white;
+    width: 520px;
+    height: 75px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 120%;
+    cursor: pointer;
+    position: fixed; /* 고정 위치 */
+    bottom: 5%;
+    left: 50%; /* 수평으로 가운데 정렬 */
+    transform: translateX(-50%); /* 부모 요소에 상대적으로 가운데 정렬 */
+    border:none;
+    
+}
+.text4{
+	color: gray;
+	 display: flex;
+    justify-content: center;
+    align-items: center;
+	
+}
+
+
+
+

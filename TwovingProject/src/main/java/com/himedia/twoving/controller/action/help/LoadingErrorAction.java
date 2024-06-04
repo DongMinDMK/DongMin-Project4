@@ -22,56 +22,61 @@ public class LoadingErrorAction implements Action {
 		HttpSession session = request.getSession();
 		MemberVO memberVO = (MemberVO)session.getAttribute("loginUser");
 		
-		String loadingErrorList = request.getParameter("inquirylist");
-		
-		int page = 1;
-		  
-		 if(request.getParameter("page") != null) {
-			 
-		  page =  Integer.parseInt(request.getParameter("page"));
-		  
-		  session.setAttribute("page", page);
-		  
-		 } else if(session.getAttribute("page") != null) { 
-			 
-		  page = (Integer)session.getAttribute("page"); 
-		  
-		} else {
-		   session.removeAttribute("page"); 
-		 }
-		 
-		 String key = "";
-			
-		if(request.getParameter("key") != null) {
-			key = request.getParameter("key");
-			session.setAttribute("key", key);
-		}else if(session.getAttribute("key") != null){
-			key = (String)session.getAttribute("key");
+		if(memberVO == null) {
+			RequestDispatcher rd = request.getRequestDispatcher("member/loginForm.jsp");
+			rd.forward(request, response);
 		}else {
-			session.removeAttribute("key");
-		}
-		  
-		  Paging paging = new Paging(); 
-		  
-		  paging.setPage(page);
-		 
-		  FaqDAO faqDAO = FaqDAO.getInstance();
+			String loadingErrorList = request.getParameter("inquirylist");
 			
-		  int count = faqDAO.getAllCount4("faq", "subject", key, loadingErrorList);
+			int page = 1;
+			  
+			 if(request.getParameter("page") != null) {
+				 
+			  page =  Integer.parseInt(request.getParameter("page"));
+			  
+			  session.setAttribute("page", page);
+			  
+			 } else if(session.getAttribute("page") != null) { 
+				 
+			  page = (Integer)session.getAttribute("page"); 
+			  
+			} else {
+			   session.removeAttribute("page"); 
+			 }
 			 
-		  System.out.println("count : " + count);
+			 String key = "";
+				
+			if(request.getParameter("key") != null) {
+				key = request.getParameter("key");
+				session.setAttribute("key", key);
+			}else if(session.getAttribute("key") != null){
+				key = (String)session.getAttribute("key");
+			}else {
+				session.removeAttribute("key");
+			}
+			  
+			  Paging paging = new Paging(); 
+			  
+			  paging.setPage(page);
 			 
-		  paging.setTotalCount(count);
-		
-		
-		
-		ArrayList<FaqVO> loadingErrorList2 = faqDAO.getLoadingError(loadingErrorList,paging, key);
-		
-		request.setAttribute("loadingErrorList", loadingErrorList2);
-		request.setAttribute("paging", paging);
-		
-		RequestDispatcher rd = request.getRequestDispatcher("faqloadingErrorList.jsp");
-		rd.forward(request, response);
+			  FaqDAO faqDAO = FaqDAO.getInstance();
+				
+			  int count = faqDAO.getAllCount4("faq", "subject", key, loadingErrorList);
+				 
+			  System.out.println("count : " + count);
+				 
+			  paging.setTotalCount(count);
+			
+			
+			
+			ArrayList<FaqVO> loadingErrorList2 = faqDAO.getLoadingError(loadingErrorList,paging, key);
+			
+			request.setAttribute("loadingErrorList", loadingErrorList2);
+			request.setAttribute("paging", paging);
+			
+			RequestDispatcher rd = request.getRequestDispatcher("faqloadingErrorList.jsp");
+			rd.forward(request, response);
+		}
 	}
 
 }

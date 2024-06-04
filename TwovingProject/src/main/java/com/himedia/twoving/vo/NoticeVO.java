@@ -11,20 +11,18 @@ public class NoticeVO {
 	private Integer readcount;
 	private String noticeyn;
 	
-	
-	public Integer getNseq() {
-		return nseq;
-	}
-	public void setNseq(Integer nseq) {
-		this.nseq = nseq;
-	}
 	public String getNoticeyn() {
 		return noticeyn;
 	}
 	public void setNoticeyn(String noticeyn) {
 		this.noticeyn = noticeyn;
 	}
-	
+	public Integer getNseq() {
+		return nseq;
+	}
+	public void setNseq(Integer nseq) {
+		this.nseq = nseq;
+	}
 	public String getUserid() {
 		return userid;
 	}

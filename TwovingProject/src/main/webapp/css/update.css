@@ -1,0 +1,100 @@
+@charset "EUC-KR";
+
+body {
+
+	background-color: black;
+	font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Roboto", Segoe UI, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif;
+
+	
+}
+
+.logo {
+	top: 20px;
+	margin-left: 20px;
+	color: red;
+	font-size: 40px;
+	font-weight: bold;
+	background-color: black;
+	border: 1px;
+	 font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Roboto", Segoe UI, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif;
+}
+.field{
+	font-size: 110%;
+	color:white;
+	width:1800px;
+	height:100px;
+	margin-left: 40px;
+	border-bottom: 1px solid gray;
+	padding-top: 40px;
+	display: flex;	
+	text-align: center;
+	
+}
+h3{
+	color:white;
+	font-weight: bold;
+	font-size: 150%;
+	margin-left: 40px;
+	
+}
+
+label{
+	flex:1;
+	padding-top:25px;
+	
+}
+input, .name, .userid{
+	flex:10;
+	background-color: black;
+	border: none;
+	color: white;
+	font-size: 110%;
+}
+input{
+	margin-bottom: 30px;
+}
+.name, .userid{
+	color:white;
+}
+
+.secession{
+	background: black;	
+	border:none;
+	padding-top:25px;
+	margin-left: 50px;
+	color:gray;
+	cursor:pointer;
+	font-size: 110%;
+}
+.btn{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 40px;
+
+}
+
+
+.btn1{
+	width: 250px;
+	height: 75px;
+	border-radius: 5px;
+	margin: 5px;
+		font-weight: bold;
+		background: white;
+		color:black;
+		cursor: pointer;
+
+}
+.btn2{
+	cursor: pointer;
+	margin: 5px;
+	width: 250px;
+	height: 75px;
+	background-color: black;
+	color:white;
+	border: 1px solid gray;
+	border-radius: 5px;
+		font-weight: bold;
+	
+}

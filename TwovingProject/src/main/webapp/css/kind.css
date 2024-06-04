@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+
+#genre {justify-content:center; border-radius: 20px;}
+.genretag {background-color:white; height:30px; width:100px;  border:1px solid white; text-align:center;  line-height:30px; 
+				  margin:10px; border-radius: 20px;}
+				  
+.genretag:hover {transform : translateY(-10px); transition-duration: 0.5s; transition-delay: 0.3s;}				  
+.genretag a{ text-decoration-line:none; font-weight:bold; color:black;}				 
+		 
+
+.kindproducts{
+   display: flex;   flex-wrap: wrap;   border:1px solid red;   justify-content: space-between; 
+   width:100%; height:100%; 
+}
+
+.kinditem{
+   margin: 5px 5px;   border:1px solid white;  width:200px; height:300px;
+   display: flex; border-radius: 20px; }
+  
+.kinditem:hover {transform : translateY(-20px); transition-duration: 0.5s; transition-delay: 0.3s;}   
+
+.kinditem img{width:200px; height:300px;  border-radius: 20px;}
+
+
+
+
+
+
+

@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<% response.sendRedirect("twoving.do?command=notice"); %>
+	<% response.sendRedirect("twoving.do?command=index"); %>
 </body>
 </html>

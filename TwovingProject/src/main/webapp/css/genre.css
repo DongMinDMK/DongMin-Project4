@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+				 
+
+.genreproducts{
+   display: flex;   flex-wrap: wrap;   border:1px solid red;   /* flex-start;    */
+   width:100%; height:100%; 
+}
+
+.genreitem{
+   margin: 5px 5px;   border:1px solid white;  width:200px; height:300px;
+   display: flex; border-radius: 20px; 
+}
+
+.genreitem:hover {transform : translateY(-20px); transition-duration: 0.5s; transition-delay: 0.3s;}
+
+.genreitem img{width:200px; height:300px; border-radius: 20px;}
+
+
+

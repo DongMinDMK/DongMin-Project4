@@ -25,9 +25,9 @@ public class NoticeAction implements Action {
 		MemberVO memberVO = (MemberVO)session.getAttribute("loginUser");
 		
 		if(memberVO == null) {
-//			RequestDispatcher rd = request.getRequestDispatcher("loginForm.jsp");
-//			rd.forward(request, response);
-		}
+			RequestDispatcher rd = request.getRequestDispatcher("loginForm.jsp");
+			rd.forward(request, response);
+		}else {
 			int page = 1;
 			  
 			 if(request.getParameter("page") != null) {
@@ -63,6 +63,7 @@ public class NoticeAction implements Action {
 				
 				RequestDispatcher rd = request.getRequestDispatcher("noticeCenter.jsp");
 				rd.forward(request, response);
-		}
+		    }
+	}
 
 }

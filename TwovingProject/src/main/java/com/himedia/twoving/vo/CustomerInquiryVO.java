@@ -1,5 +1,7 @@
 package com.himedia.twoving.vo;
 
+import java.sql.Timestamp;
+
 public class CustomerInquiryVO {
 	
 	private int ciseq;
@@ -16,8 +18,15 @@ public class CustomerInquiryVO {
 	private String runcontent; //이용콘텐츠
 	private String inquirytitle; //문의제목
 	private String inquirycontent; //문의내용
-	private String reply; // 댓글
+	private String reply;
+	private Timestamp indate;
 	
+	public Timestamp getIndate() {
+		return indate;
+	}
+	public void setIndate(Timestamp indate) {
+		this.indate = indate;
+	}
 	public String getReply() {
 		return reply;
 	}

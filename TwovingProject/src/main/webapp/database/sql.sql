@@ -47,6 +47,7 @@ CREATE TABLE `twoving`.`customerinquiry` (
   `inquirytitle` VARCHAR(50) NOT NULL,
   `inquirycontent` VARCHAR(1000) NOT NULL,
   `reply` VARCHAR(1000) NULL,
+  `indate` DATETIME NULL DEFAULT now(),
   PRIMARY KEY (`ciseq`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
@@ -70,7 +71,7 @@ CREATE TABLE `twoving`.`payment` (
   `subscribeyn` CHAR(1) NOT NULL DEFAULT 'N',
   `productname` VARCHAR(50) NOT NULL,
   `paymentprice` VARCHAR(50) NOT NULL,
-  `paymentmeans` VARCHAR(50) NOT NULL,
+  `paymentmeans` VARCHAR(50) NULL DEFAULT '신용카드',
   `paymentday` DATETIME NOT NULL DEFAULT now(),
   `runperiod1` DATETIME NOT NULL DEFAULT now(),
   `runperiod2` DATETIME NOT NULL DEFAULT now(),
@@ -85,6 +86,7 @@ insert into payment(productname, paymentprice, paymentmeans) values( '스탠다�
 insert into payment(productname, paymentprice, paymentmeans) values( '프리미엄', '17,000원','신용카드');
 insert into payment(productname, paymentprice, paymentmeans) values( '광고형 스탠다드', '5,500원','네이버플러스 멤버십');
 insert into payment(subscribeyn, productname, paymentprice, paymentmeans) values('Y','광고형 스탠다드', '5,500원','Toss Pay');
+insert into payment(productname, paymentprice, paymentmeans) values( '베이직', '9,500원','Toss Pay');
 insert into payment(productname, paymentprice, paymentmeans) values( '광고형 스탠다드', '5,500원','Toss Pay');
 insert into payment(productname, paymentprice, paymentmeans) values( '스탠다드', '13,900원','Google Play');
 insert into payment(productname, paymentprice, paymentmeans) values( '스탠다드', '13,900원','신용카드');
@@ -573,6 +575,9 @@ select* from notice;
 select* from customerinquiry;
 
 insert into customerinquiry(name, email, phone, inquiryList, devicephone, devicemodelname, runenvironment, runtime1, runtime2, runcontent, inquirytitle, inquirycontent)  values('hong1', 'syh6917@naver.com', '010-1111-1111', '회원/로그인', 'PC', '윈도우11', 'PC', '03:00', '07:00', '드라마', '안녕하세요', '드라마 관련 질문드립니다.');
+insert into customerinquiry(name, email, phone, inquiryList, devicephone, devicemodelname, runenvironment, runtime1, runtime2, runcontent, inquirytitle, inquirycontent)  values('hong1', 'syh6917@naver.com', '010-1111-1111', '회원/로그인', 'PC', '윈도우11', 'PC', '03:00', '07:00', '드라마', '안녕하세요', '드라마 관련 질문드립니다.');
+insert into customerinquiry(name, email, phone, inquiryList, devicephone, devicemodelname, runenvironment, runtime1, runtime2, runcontent, inquirytitle, inquirycontent)  values('hong1', 'syh6917@naver.com', '010-1111-1111', '회원/로그인', 'PC', '윈도우11', 'PC', '03:00', '07:00', '드라마', '안녕하세요', '드라마 관련 질문드립니다.');
+
 
 
 

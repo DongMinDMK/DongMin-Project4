@@ -15,15 +15,25 @@
    <div class="box">
    
    <div class="box1">
-   <input type="button" class="logo" onclick="location.href='twoving.do?command=index'" style="cursor: pointer;"value="TWOVING" />
+   <input type="button" class="logo" onclick="location.href='twoving.do?command=tMain'" style="cursor: pointer;"value="TWOVING" />
+               <div class="box1-2">시리즈</div>
+               <div class="box1-3">영화</div>
+    </div>
+    <div class="box2">
+          <div class="box2-2"><img src="member/돋보기.png" width="40px" height="40px"  />&nbsp;&nbsp;</div>
+          <div class="box2-1"><img src="member/logo.png" width="40px" height="40px"  />&nbsp;&nbsp;</div>
+	 </div>
+   
+   <!-- <div class="box1">
+   <input type="button" class="logo" onclick="location.href='twoving.do?command=tMain'" style="cursor: pointer;"value="TWOVING" />
                <div class="box1-2">시리즈</div>
                <div class="box1-3">영화</div>
        </div>
       <div class="box2">
           <div class="box2-2"><img src="member/돋보기.png" width="40px" height="40px"  />&nbsp;&nbsp;</div>
-         <div class="box2-1"><img src="member/logo.png" width="40px" height="40px"  />&nbsp;&nbsp;</div>
-
-      </div>
+          <div class="box2-1"><img src="member/logo.png" width="40px" height="40px"  />&nbsp;&nbsp;</div>
+	 </div> -->
+	 
       </div>
       <div class="box22">
          <div class="box22-1"><img src="member/logo.png" width="120px" height="120px"  /></div>
@@ -45,7 +55,7 @@
    
       <div class="box44-1">시청 내역 &nbsp;</div>
       <div class="box44-2">찜 &nbsp;</div>
-      <div class="box44-3" onClick="location.href='twoving.do?command=passTicket'">이용권 내역 &nbsp;</div>
+      <div class="box44-3" onClick="location.href='twoving.do?command=passTicketList'">이용권/캐시 내역 &nbsp;</div>
       <div class="box44-4">문의 내역 &nbsp;</div>
 
       

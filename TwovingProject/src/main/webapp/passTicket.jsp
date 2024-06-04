@@ -2,6 +2,18 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ page import="java.util.Calendar" %>
+
+<%
+	Calendar cal = Calendar.getInstance();
+	
+	// 현재 날짜에서 30일을 더함
+	cal.add(Calendar.DAY_OF_MONTH, 30-1);
+	
+	java.util.Date runperiod2Date = cal.getTime();
+	
+	request.setAttribute("runperiod2", runperiod2Date);
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,13 +58,13 @@
 		</div>
 		
 		
-		<div class="passTicketandcash">
+		<div class="passTicketandcash" style="margin-left: -940px;">
 			<div class="left">
 				<a href=""><span style="color:gray; margin-left: 15px;">이용권</span></a> &nbsp;&nbsp; | &nbsp;&nbsp;
 				<a href=""><span style="color:gray;">캐시</span></a>
 			</div>
-			<div class="right" style="">
-				<input type="button" value="이용권 구독하기" style="background-color:black; border: 1px solid gray; color: gray; font-weight: bold; padding: 3px;">
+			<div class="right">
+				<input type="button" value="이용권 구독하기" style="background-color:black; border: 1px solid gray; color: gray; font-weight: bold; padding: 3px; cursor:pointer;">
 			</div>
 		</div>
 		
@@ -92,7 +104,7 @@
 						<td>${payment.paymentprice}</td>
 						<td>${payment.paymentmeans}</td>
 						<td><fmt:formatDate value="${payment.paymentday}"/></td>
-						<td><fmt:formatDate value="${payment.runperiod1}"/> ~ <fmt:formatDate value="${payment.runperiod2}"/></td>
+						<td><fmt:formatDate value="${payment.runperiod1}"/> ~ <fmt:formatDate value="${runperiod2}"/></td>
 					</tr>
 					</c:forEach>
 			</table>

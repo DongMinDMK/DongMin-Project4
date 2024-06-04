@@ -1,169 +1,157 @@
 @charset "EUC-KR";
 
 body {
-   color: white;
-   background-color: black;
-   justify-content: center;
-   margin: 0;
-   padding: 0;
-   display: flex;
-   align-items: center;
-   text-align: center;
-   font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Roboto",
-      Segoe UI, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue,
-      sans-serif ";
-}
-
-a{
-	text-decoration: none;
-}
-
-section{
-	width: 100%;
-	display:flex;
-	flex-direction:column;
-}
-
-section article{
-	width: 100%;
-	/* border: 1px solid white; */
-	display:flex;
-	flex-direction:column;
+	color: white;
+	background-color: black;
+	justify-content: center;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	height: 100vh;
+	text-align: center;
+	font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Roboto",
+		Segoe UI, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue,
+		sans-serif ";
 }
 
 .logo {
-   top: 15px;
-   left: 20px;
-   color: red;
-   font-size: 40px;
-   font-weight: bold;
-   background: black;
-   background: none;
-   border: none;
+	top: 20px;
+	margin-left: 20px;
+	color: red;
+	font-size: 40px;
+	font-weight: bold;
+	background-color: black;
+	border: 1px;
+	 font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Roboto", Segoe UI, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif;
 }
 
 .box {
-   margin: 0;
-   padding: 0;
-   background-color: black;
-   display: flex;
-   width: 100%;
-   height: 90px;
-   top: 0; /* Add this line */
-   left: 0;
-   top: 0; /* Add this line */
-   left: 0;
+	margin: 0;
+	padding: 0;
+	background-color: black;
+	display: flex;
+	width: 100%;
+	height: 90px;
+	height: 90px;
+	position: absolute; /* Add this line */
+	top: 0; /* Add this line */
+	left: 0;
+	position: absolute; /* Add this line */
+	top: 0; /* Add this line */
+	left: 0;
 }
 
 .box1 {
-   display: flex;
-   justify-content: flex-start;
-   align-items: center; /* Center vertically */
-   flex-direction: row;
-   flex: 1;
-      color: black; /* Make text visible on gray background */
-   font-size: 120%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center; /* Center vertically */
+	flex-direction: row;
+	flex: 1;
+		color: gray; /* Make text visible on gray background */
+	font-size: 120%;
 }
 
 .box2 {
-   display: flex;
-   justify-content: flex-end;
-   align-items: center; /* Center vertically */
-   flex: 1;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center; /* Center vertically */
+	flex: 1;
 }
 
 .box1-1, .box1-2, .box1-3 {
-   margin: 0 10px; /* Add some margin between items */
-   font-size: 120%;
+	margin: 0 10px; /* Add some margin between items */
+	font-size: 120%;
 }
 
 .box1-2, .box1-3 {
-   color: gray; /* Make text visible on gray background */
-   font-size: 110%;
+	color: gray; /* Make text visible on gray background */
+	font-size: 110%;
 }
 
 .box22 {
-   margin: 0;
-   padding: 0;
-   background-color: gray;
-   opacity: 0.5;
-   display: flex;
-   width: 100%;
-   height: 350px;
-   position: absolute; /* Add this line */
-   top: 9%; /* Add this line */
-   left: 0;
-   align-items: center;
-   font-weight: bold;
+	margin: 0;
+	padding: 0;
+	background-color: #191919;
+	display: flex;
+	width: 100%;
+	height: 350px;
+	position: absolute; /* Add this line */
+	top: 9%; /* Add this line */
+	left: 0;
+	align-items: center;
+	font-weight: bold;
 }
 
 .box33 {
-   margin: 0;
-   padding: 0;
-   background-color: #2e2e2e;
-   display: flex;
-   width: 100%;
-   height: 80px;
-   position: absolute; /* Add this line */
-   top: 45%; /* Add this line */
-   left: 0;
-   align-items: center;
-   text-align: center;
-   justify-content: center;
-   font-weight: bold;
+	margin: 0;
+	padding: 0;
+	background-color: #2e2e2e;
+	display: flex;
+	width: 100%;
+	height: 80px;
+	position: absolute; /* Add this line */
+	top: 45%; /* Add this line */
+	left: 0;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+	font-weight: bold;
 }
 
 .box22-1, .box22-2 {
-   margin-left: 20px; /* Align to the left with some margin */
-   font-size: 130%;
+	margin-left: 20px; /* Align to the left with some margin */
+	font-size: 130%;
 }
 
 .box22-3 {
-   margin-right: 20px; /* Align to the right with some margin */
-   margin-left: auto; /* Push to the right */
-   cursor: pointer;
+	margin-right: 20px; /* Align to the right with some margin */
+	margin-left: auto; /* Push to the right */
+	cursor: pointer;
 }
 
 .box33-1 {
-   color: white;
-   font-style: bold;
-   font-size: 110%;
+	color: white;
+	font-style: bold;
+	font-size: 110%;
 }
 
 a {
-   color: red;
-   font-size: 120%;
-   font-weight: bold;
+	color: red;
+	font-size: 120%;
+	font-weight: bold;
+	text-decoration: none;
 }
 
 .box44 {
-   margin: 0;
-   padding: 0;
-   background-color: black;
-   display: flex; /* Use flex to align items in a row */
-   width: 100%;
-   height: 80px;
-   top: 55%; /* Adjust this to place .box44 where needed */
-   left: 10px;
-   display: flex;
-   justify-content: flex-start;
-   align-items: center; /* Center vertically */
-   flex-direction: row;
-   flex: 1;
-   border-bottom: 1px solid gray;
-   position: absolute;
+	margin: 0;
+	padding: 0;
+	background-color: black;
+	display: flex; /* Use flex to align items in a row */
+	width: 100%;
+	height: 80px;
+	position: absolute;
+	top: 55%; /* Adjust this to place .box44 where needed */
+	left: 10px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center; /* Center vertically */
+	flex-direction: row;
+	flex: 1;
+	border-bottom: 1px solid gray;
 }
 
 .passTicketandcash{
 	display:flex;
 	width:100%;
-	margin-top: 490px;
+	margin-top: 120px;
 	position: absolute;
 	justify-content: space-between;
 }
 
 .paymentTable{
-	margin-top: 530px;
+	margin-top: 150px;
+	margin-left: -940px;
 	width: 100%;
 	position: absolute;
     border: 1px solid white;
@@ -202,14 +190,43 @@ a {
             flex: 1;
 }
 
+.updateDefuseTable tr{
+	display:flex;
+	justify-content: space-between;
+}
+
+.updateDefuseTable th{
+	text-align: center;
+	margin: 0 auto;
+}
+
+.updateDefuseTable td{
+	color:gray;
+	margin-top: 5px;
+	padding: 10px;
+}
+
+.popup{
+	margin-top: 50px;
+}
+
+
 .box44-1, .box44-2, .box44-3, .box44-4 {
-   margin: 0 10px;
-   font-size: 120%;
-   color: gray;
-   font-weight: bold;
-   cursor: pointer;
-   
+	margin: 0 10px;
+	font-size: 120%;
+	color: gray;
+	font-weight: bold;
+	cursor: pointer;
+	
 }
 .img{
-      margin-top: 20px; 
+		margin-top: 20px; 
+}
+.ticket{
+		color:white;
+		font-size: 80%;
+		border: 1px solid gray;
+		border-radius: 3px;
+		padding:3px;
+		text-decoration-line: none;
 }
